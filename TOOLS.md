@@ -1,0 +1,18 @@
+- editor
+  - vim/ neovim
+  - atom
+  - rubymine
+  - android studio
+- git
+- ruby
+- node.js
+- vagrant
+  - postgresql
+  - mysql
+- heroku
+- mac
+  - homebrew
+    - brew-cask
+  - iterm2
+    - Solarized dark iterm colors
+    - zsh
