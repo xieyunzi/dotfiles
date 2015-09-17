@@ -9,37 +9,19 @@
  ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░  
 
   ▓▓▓▓▓▓▓▓▓▓
- ░▓ about  ▓ custom linux config files
+ ░▓ about  ▓ custom *nix config files
  ░▓ author ▓ xieyunzi <xieyunzi@foxmail.com>
  ░▓ code   ▓ http://github.com/xieyunzi/dotfiles
  ░▓▓▓▓▓▓▓▓▓▓
  ░░░░░░░░░░https://github.com/xero/dotfiles#how-it-works
 
- awesome        > awesome wm config and ghost theme
- compton        > minimal composite config for opacity
- figlet         > custom 3d font
  fonts          > configs for gohu and other bitmap fonts
- fun            > term color, sys info, and other misc scripts
  git            > global git config and aliases
- herbstluftwm   > herbstluft wm config and greybeard theme
- irssi          > nixers irc theme
- mc             > midnight commander ui colors
- mpd            > music player daemon setup
- mutt           > minimal mutt setup
- ncmpcpp        > ncurses mpc++ ui/color settings
- pacman         > pacman colors and progress bar animations
- previews       > unixporn screenshots
- ranger         > file manager with image previews and z3bra theme
- ryu-login      > ryu ansi art for /etc/issue tty login
+ shell          > shell config, like bash and zsh
  ssh            > remote ssh server keep alive
- stalonetray    > stand alone tray for daemons
- sublime        > sublime text 2 with greybeard, monokai, and gohu
  sys            > system automation scripts
- themes         > mod of the cathexis dark theme for gtk/qt/xfce
  tmux           > terminal multiplexer with custom status bar
- urxvt          > sourcerer terminal colors and keyboard settings
  vim            > wizard status bar and sourcerer color scheme
- wallpaper      > the cool desktop background images i use
  zsh            > zshell settings, aliases, and custom prompts
 ```
 
@@ -101,7 +83,7 @@ navigate to your home directory
 
 clone the repo:
 
-`git clone http://git.xero.nu/dotfiles.git`
+`git clone https://github.com/xieyunzi/dotfiles.git`
 
 enter the dotfiles directory
 
@@ -131,8 +113,6 @@ etc, etc, etc...
 
 #my shell
 i prefer a minimal setup, and choose to interact with my operating system via the so-called "terminal" or "command line", (read that quoting sarcastically) over a gui interface 2 times out of 3. with the web browser and video player among the noted outliers. in my opinion, using your computer should be a very personal experience. your colors, aliases, key-bindings, etc meticulously crafted to your exacting specifications. so for me, the unix shell is the most important part of my environment.
-
-![](https://raw.githubusercontent.com/xero/dotfiles/master/previews/xero_shell.gif)
 
 my terminal emulator of choice is the lightweight, unicode, 256 color [urxvt](http://linux.die.net/man/1/urxvt). i use [zsh](http://linux.die.net/man/1/zsh) as my interactive shell. it's an extensible, bash like shell with awesome completion and correction engines. i manage multiple shell sessions with [tmux](http://linux.die.net/man/1/tmux). it's a feature packed terminal multiplexer with support for buffers, split windows, detached local and remote sessions, etc. i'm a member of the cult of [vim](http://linux.die.net/man/1/vim). sing phrases to the third reincarnation of the glorious ed! lel. [mpd](http://linux.die.net/man/1/mpd) is my music server and i use [ncmpcpp](http://ncmpcpp.rybczak.net/) as it's frontend. my configs for [urxvt](http://git.io/.urxvt), [zsh](http://git.io/.zsh), [tmux](http://git.io/.tmux), [vim](http://git.io/.vim), [mpd](http://git.io/.mpd) and [ncmpcpp](http://git.io/.ncmpcpp) shown above feature my [sourcerer](http://sourcerer.xero.nu) color scheme.
 
