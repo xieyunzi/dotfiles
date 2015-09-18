@@ -1,0 +1,10 @@
+editorconfig-vim
+vim-airline
+vim-fugitive
+vim-javascript
+vim-ls
+emmet-vim
+vim-autoformat
+vim-jade
+vim-jsx
+vim-rubocop
