@@ -1,5 +1,14 @@
 *~
 .DS_Store
+.idea
 .idea/
+.db_branch_dumps
 .db_branch_dumps/
+
 tags
+
+# for atom ctags
+.tags
+.tags1
+
+config/environments/development.rb
