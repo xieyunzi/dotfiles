@@ -1,12 +1,11 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=/Users/reiner/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="theunraveler"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -46,12 +45,11 @@ ZSH_THEME="theunraveler"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx terminalapp git git-flow ruby rails z)
+plugins=(git)
 
 # User configuration
 
-#export PATH="/Users/xieyunzi/.rvm/gems/ruby-2.1.3/bin:/Users/xieyunzi/.rvm/gems/ruby-2.1.3@global/bin:/Users/xieyunzi/.rvm/rubies/ruby-2.1.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/xieyunzi/.rvm/bin:/Users/xieyunzi/.rvm/bin:/Users/xieyunzi/Library/Android/sdk/tools:/Users/xieyunzi/Library/Android/sdk/platform-tools"
-export PATH="$PATH:/Users/xieyunzi/.rvm/gems/ruby-2.1.3/bin:/Users/xieyunzi/.rvm/gems/ruby-2.1.3@global/bin:/Users/xieyunzi/.rvm/rubies/ruby-2.1.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/xieyunzi/.rvm/bin:/Users/xieyunzi/.rvm/bin:/Users/xieyunzi/Library/Android/sdk/tools:/Users/xieyunzi/Library/Android/sdk/platform-tools"
+export PATH="/Users/reiner/.rvm/gems/ruby-2.1.5/bin:/Users/reiner/.rvm/gems/ruby-2.1.5@global/bin:/Users/reiner/.rvm/rubies/ruby-2.1.5/bin:/Users/reiner/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -81,33 +79,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# xieyunzi ---------------------------------------------
-
-# history, tab sessions don't share the command history with each other
-# http://superuser.com/questions/410965/command-history-in-zsh
-setopt APPEND_HISTORY
-
-# http://alias.sh/paginated-colored-tree
-ltree()
-{
-    tree -C $* | less -R
-}
-
-# for nvm
-source $(brew --prefix nvm)/nvm.sh
-export NVM_DIR=~/.nvm
-
-# java
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export JAVA_BIN="$JAVA_HOME/bin"
-export PATH="$PATH:$JAVA_HOME/bin"
-export CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
-
-# git
-alias git.pod="git pull origin develop"
-alias git.pom="git pull origin master"
-
-# for hh https://github.com/dvorka/hstr
-export HISTFILE=~/.zsh_history  # ensure history file visibility
-export HH_CONFIG=hicolor        # get more colors
-bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

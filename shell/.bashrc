@@ -1,31 +1,32 @@
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
 
-source ~/.git-completion.bash
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
-#for nvm
-source $(brew --prefix nvm)/nvm.sh
-export NVM_DIR=~/.nvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-alias ll='ls -alh'
+export NVM_DIR="/Users/reiner/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# http://alias.sh/paginated-colored-tree
-ltree()
-{
-    tree -C $* | less -R
+. "`brew --prefix`/etc/profile.d/z.sh"
+
+
+
+
+# add this configuration to ~/.bashrc
+export HH_CONFIG=hicolor         # get more colors
+shopt -s histappend              # append new history items to .bash_history
+export HISTCONTROL=ignorespace   # leading space hides commands from history
+export HISTFILESIZE=100000        # increase history file size (default is 500)
+export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
+# if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
+
+
+
+
+open_google(){
+  # open -a Google\ Chrome "https://google.com/search?q=$1"
+  open -a FirefoxNightly "https://google.com/search?q=$1"
 }
-
-# grep color
-export GREP_OPTIONS='--color=always'
-export GREP_COLOR='1;35;40'
-#enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  alias ls='ls --color=auto'
-  #alias dir='dir --color=auto'
-  #alias vdir='vdir --color=auto'
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
-fi
+alias ggl=open_google
