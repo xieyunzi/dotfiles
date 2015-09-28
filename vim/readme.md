@@ -8,3 +8,4 @@ vim-autoformat
 vim-jade
 vim-jsx
 vim-rubocop
+vim-easy-align
