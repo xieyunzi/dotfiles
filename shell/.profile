@@ -9,7 +9,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 . "`brew --prefix`/etc/profile.d/z.sh"
 
 
-
 # add this configuration to ~/.bashrc
 export HH_CONFIG=hicolor         # get more colors
 shopt -s histappend              # append new history items to .bash_history
@@ -33,3 +32,8 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# for golang
+export GOROOT=$(go env GOROOT)
+export GOPATH=$HOME/.go
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
