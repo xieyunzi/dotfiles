@@ -6,7 +6,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-. "`brew --prefix`/etc/profile.d/z.sh"
+source "`brew --prefix`/etc/profile.d/z.sh"
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # add this configuration to ~/.bashrc
 export HH_CONFIG=hicolor         # get more colors
