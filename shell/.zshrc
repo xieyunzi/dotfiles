@@ -49,7 +49,6 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Users/reiner/.rvm/gems/ruby-2.1.5/bin:/Users/reiner/.rvm/gems/ruby-2.1.5@global/bin:/Users/reiner/.rvm/rubies/ruby-2.1.5/bin:/Users/reiner/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -78,5 +77,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
