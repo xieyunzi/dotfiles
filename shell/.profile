@@ -2,12 +2,7 @@ export CLICOLOR=1
 # export LSCOLORS=ExFxCxDxBxegedabagacad
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 . "`brew --prefix`/etc/profile.d/z.sh"
-
 
 # add this configuration to ~/.bashrc
 export HH_CONFIG=hicolor         # get more colors
@@ -33,7 +28,10 @@ export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-# for golang
+# golang
 export GOROOT=$(go env GOROOT)
 export GOPATH=$HOME/.go
 export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+
+# ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
