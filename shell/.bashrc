@@ -1,15 +1,11 @@
 source "$HOME/.profile"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-source "`brew --prefix`/etc/profile.d/z.sh"
-
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
+fi
+
+if [ -f /usr/local/etc/bash_completion.d ]; then
+  . /usr/local/etc/bash_completion.d
 fi
 
 # add this configuration to ~/.bashrc
@@ -21,9 +17,3 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file s
 shopt -s histappend              # append new history items to .bash_history
 # if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
-
-open_google(){
-  # open -a Google\ Chrome "https://google.com/search?q=$1"
-  open -a Firefox "https://google.com/search?q=$1"
-}
-alias ggl=open_google
