@@ -3,6 +3,8 @@ export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 # history
+# http://stackoverflow.com/questions/19454837/bash-histsize-vs-histfilesize
+# http://zsh.sourceforge.net/Guide/zshguide02.html
 export HISTFILESIZE=100000
 export HISTSIZE=${HISTFILESIZE}
 export SAVEHIST=${HISTFILESIZE}
