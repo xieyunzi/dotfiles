@@ -47,4 +47,4 @@ visualstar
 vroom
 watchtower
 webapi
-zoomwin
+vim-signature

@@ -2,21 +2,29 @@ export CLICOLOR=1
 # export LSCOLORS=ExFxCxDxBxegedabagacad
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
-. "`brew --prefix`/etc/profile.d/z.sh"
+# history
+export HISTFILESIZE=100000
+export HISTSIZE=${HISTFILESIZE}
+export SAVEHIST=${HISTFILESIZE}
 
-# add this configuration to ~/.bashrc
-export HH_CONFIG=hicolor         # get more colors
-shopt -s histappend              # append new history items to .bash_history
-export HISTCONTROL=ignorespace   # leading space hides commands from history
-export HISTFILESIZE=1000000        # increase history file size (default is 500)
-export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
-export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
-# if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
-if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
+if [ -f "`brew --prefix`/etc/profile.d/z.sh" ]; then
+  . "`brew --prefix`/etc/profile.d/z.sh"
+fi
 
+alias ll="ls -lhT"
+alias ll="l -alhT"
 
-# add by xyz
-alias ll="ls -al"
+# http://alias.sh/paginated-colored-tree
+ltree()
+{
+  tree -C $* | less -R
+}
+
+open_google(){
+  open -a Google\ Chrome "https://google.com/search?q=$1"
+  # open -a Firefox "https://google.com/search?q=$1"
+}
+alias ggl=open_google
 
 #alias for cnpm
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
@@ -24,14 +32,35 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --disturl=https://npm.taobao.org/dist \
   --userconfig=$HOME/.cnpmrc"
 
+# nvm
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"
 
 # golang
 export GOROOT=$(go env GOROOT)
 export GOPATH=$HOME/.go
-export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 # ruby
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# add by xyz
+alias ll="ls -al"
+
+# heroku
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# java
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export JAVA_BIN="$JAVA_HOME/bin"
+export PATH="$PATH:$JAVA_HOME/bin"
+export CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+
+# android sdk
+# export ANDROID_HOME=${HOME}/Applications/android-sdk-macosx
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# haskell
+export PATH="$HOME/Library/Haskell/bin:$PATH"
