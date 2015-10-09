@@ -13,8 +13,8 @@ if [ -f "`brew --prefix`/etc/profile.d/z.sh" ]; then
   . "`brew --prefix`/etc/profile.d/z.sh"
 fi
 
-alias ll="ls -lhT"
-alias ll="l -alhT"
+alias l="ls -lhT"
+alias ll="ls -alhT"
 
 # http://alias.sh/paginated-colored-tree
 ltree()
@@ -44,9 +44,6 @@ export GOROOT=$(go env GOROOT)
 export GOPATH=$HOME/.go
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
-# add by xyz
-alias ll="ls -al"
-
 # heroku
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -63,3 +60,6 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # haskell
 export PATH="$HOME/Library/Haskell/bin:$PATH"
+
+# ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

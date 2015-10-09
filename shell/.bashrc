@@ -1,7 +1,5 @@
-source "$HOME/.profile"
-
-# ruby
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export SHELL=/bin/bash
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash

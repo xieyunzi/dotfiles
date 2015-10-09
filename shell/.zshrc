@@ -1,7 +1,5 @@
-source "$HOME/.profile"
-
-# ruby
-if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+export SHELL=/bin/zsh
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
