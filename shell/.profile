@@ -63,3 +63,6 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # ruby
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# dotfiles custom bin file
+export PATH="$HOME/.bin:$PATH"
