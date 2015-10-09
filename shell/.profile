@@ -44,9 +44,6 @@ export GOROOT=$(go env GOROOT)
 export GOPATH=$HOME/.go
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
-# ruby
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # add by xyz
 alias ll="ls -al"
 

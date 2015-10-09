@@ -1,5 +1,8 @@
 source "$HOME/.profile"
 
+# ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
