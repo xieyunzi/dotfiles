@@ -16,6 +16,11 @@
   - iterm2
     - Solarized dark iterm colors
     - zsh
+  - firewall
+    - pfctl
+- develop
+  - cloc
+  - rlwrap
 
 ```shell
 brew install stow

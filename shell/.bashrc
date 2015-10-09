@@ -1,31 +1,19 @@
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+source "$HOME/.profile"
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
 fi
 
-source ~/.git-completion.bash
-
-#for nvm
-source $(brew --prefix nvm)/nvm.sh
-export NVM_DIR=~/.nvm
-
-alias ll='ls -alh'
-
-# http://alias.sh/paginated-colored-tree
-ltree()
-{
-    tree -C $* | less -R
-}
-
-# grep color
-export GREP_OPTIONS='--color=always'
-export GREP_COLOR='1;35;40'
-#enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  alias ls='ls --color=auto'
-  #alias dir='dir --color=auto'
-  #alias vdir='vdir --color=auto'
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
+if [ -f /usr/local/etc/bash_completion.d ]; then
+  . /usr/local/etc/bash_completion.d
 fi
+
+# add this configuration to ~/.bashrc
+export HH_CONFIG=hicolor         # get more colors
+export HISTCONTROL=ignorespace   # leading space hides commands from history
+export HISTFILESIZE=100000        # increase history file size (default is 500)
+export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
+shopt -s histappend              # append new history items to .bash_history
+# if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
