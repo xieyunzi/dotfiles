@@ -48,3 +48,4 @@ vroom
 watchtower
 webapi
 vim-signature
+https://github.com/rhlobo/vim-super-retab
