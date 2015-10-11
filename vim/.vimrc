@@ -8,7 +8,9 @@
 "
 
 " Define paths
+let g:home_path = expand("~")
 let g:vim_path = expand("~/.vim")
 
 " Source configuration files
 exe 'source ' . g:vim_path . '/janus/vim/vimrc'
+exe 'source ' . g:home_path . '/.dotfiles/vim_cleaning/.vim/settings.vim'
