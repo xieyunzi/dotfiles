@@ -64,5 +64,9 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 # ruby
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# use neovim
+# should `stow vim` to set `~/.nvimrc`
+if which nvim > /dev/null; then alias vi=nvim; fi
+
 # dotfiles custom bin file
 export PATH="$HOME/.bin:$PATH"

@@ -1,4 +1,7 @@
+# vim file
 vim/.vim/bundle/
+vim/.vim/_backup
+vim/.vim/_temp
 
 .DS_Store
 .AppleDouble
@@ -6,7 +9,6 @@ vim/.vim/bundle/
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
