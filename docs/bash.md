@@ -8,3 +8,9 @@ if [ "$file1" -ot "$file2" ]; then
 fi
 ```
 http://stackoverflow.com/questions/14802807/compare-files-date-bash
+
+# How to copy symbolic links?
+
+> I use `cp -av` for most of my heavy copying.
+
+http://superuser.com/questions/138587/how-to-copy-symbolic-links
