@@ -1,5 +1,4 @@
 export CLICOLOR=1
-# export LSCOLORS=ExFxCxDxBxegedabagacad
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 # history
@@ -9,8 +8,11 @@ export HISTFILESIZE=100000
 export HISTSIZE=${HISTFILESIZE}
 export SAVEHIST=${HISTFILESIZE}
 
-if [ -f "`brew --prefix`/etc/profile.d/z.sh" ]; then
-  . "`brew --prefix`/etc/profile.d/z.sh"
+# brew prefix path
+export BREW_PREFIX_PATH=$(brew --prefix)
+
+if [ -f "$BREW_PREFIX_PATH/etc/profile.d/z.sh" ]; then
+  . "$BREW_PREFIX_PATH/etc/profile.d/z.sh"
 fi
 
 alias l="ls -lhT"
@@ -35,9 +37,10 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --userconfig=$HOME/.cnpmrc"
 
 # nvm
+export BREW_PREFIX_NVM=$(brew --prefix nvm)
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist
 export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"
+[ -s "$BREW_PREFIX_NVM/nvm.sh" ] && . "$BREW_PREFIX_NVM/nvm.sh"
 
 # golang
 export GOROOT=$(go env GOROOT)
