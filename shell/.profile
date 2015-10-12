@@ -17,6 +17,7 @@ fi
 
 alias l="ls -lhT"
 alias ll="ls -alhT"
+alias g=git
 
 # http://alias.sh/paginated-colored-tree
 ltree()
