@@ -74,3 +74,6 @@ if which nvim > /dev/null; then alias vi=nvim; fi
 
 # dotfiles custom bin file
 export PATH="$HOME/.bin:$PATH"
+
+# load custom profile
+if [ -f "$HOME/.profile_custom" ]; then . "$HOME/.profile_custom"; fi
