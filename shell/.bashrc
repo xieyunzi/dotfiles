@@ -1,4 +1,5 @@
 export SHELL=/bin/bash
+alias loadrc="source $HOME/.bashrc"
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
 if [ -f ~/.git-completion.bash ]; then

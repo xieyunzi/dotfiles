@@ -1,4 +1,5 @@
 export SHELL=/bin/zsh
+alias loadrc="source $HOME/.zshrc"
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
 # Path to your oh-my-zsh installation.
