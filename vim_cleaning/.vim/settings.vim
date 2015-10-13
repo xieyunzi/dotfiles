@@ -12,6 +12,12 @@ let g:python3_host_skip_check = 1
 
 filetype plugin indent on
 
+" works with neovim
+" this will place yanked text into the global clipboard
+" and allow you to paste from the global clipboard
+" without having to use any special registers
+set clipboard=unnamedplus
+
 """"""""""""""""""""""""""""""
 "" Themes
 ""
