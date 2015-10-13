@@ -2,6 +2,10 @@
 "" Builtin
 ""
 
+" use vim settings, rather than vi settings
+" must be first, because it changes other options as a side effect
+set nocompatible
+
 " Tell vimball to get lost.
 let g:loaded_vimballPlugin = 1
 let g:loaded_getscriptPlugin = 1
