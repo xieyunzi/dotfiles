@@ -1,11 +1,3 @@
 http://vimdoc.sourceforge.net/htmldoc/eval.html
-https://github.com/justinmk/vim-gtfo
-https://github.com/tpope/vim-repeat
-https://github.com/justinmk/vim-sneak
-https://github.com/troydm/zoomwintab.vim.git
-
-
 http://stackoverflow.com/questions/4494336/how-do-you-store-a-list-of-directories-into-an-array-in-bash-and-then-print-the
 http://stackoverflow.com/questions/7290758/bash-script-read-all-the-files-in-directory
-
-https://github.com/carlhuda/janus/wiki/Customization
