@@ -5,3 +5,4 @@ stow git
 
 stow ruby
 stow lisp
+stow nodejs
