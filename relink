@@ -3,6 +3,8 @@
 stow shell
 stow git
 
+stow vim-janus
+
 stow ruby
 stow lisp
 stow nodejs
