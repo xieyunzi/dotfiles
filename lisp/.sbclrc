@@ -6,3 +6,5 @@
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
 
+(ql:quickload :prove)
+(setf prove:*enable-colors* t)
