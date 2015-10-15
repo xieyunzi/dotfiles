@@ -73,3 +73,13 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
+
+" easytags
+let g:easytags_async = 1
+let g:easytags_file = '~/.vim/tags'
+let g:easytags_dynamic_files = 2
+let g:easytags_updatetime_min = 10000
+let g:easytags_by_filetype = 1
+
+" vim-tags
+" let g:vim_tags_auto_generate = 0
