@@ -1,10 +1,8 @@
 #!/bin/bash
 
-stow shell
-stow git
-
-stow vim-janus
-
-stow ruby
-stow lisp
-stow nodejs
+# base
+stow -t $HOME shell git
+# language
+stow -t $HOME ruby lisp nodejs
+# vim
+stow -t $HOME vim-janus
