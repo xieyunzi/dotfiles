@@ -1,3 +1,7 @@
+# DIR="$(cd "$(dirname "$0")" && pwd)"
+# DIR="$(dirname "$(readlink -f "$0")")"
+# echo $(pwd -P)
+
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
