@@ -20,7 +20,7 @@ filetype plugin indent on
 " this will place yanked text into the global clipboard
 " and allow you to paste from the global clipboard
 " without having to use any special registers
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 
 """"""""""""""""""""""""""""""
 "" Themes
