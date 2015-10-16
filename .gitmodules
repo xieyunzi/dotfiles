@@ -1,0 +1,4 @@
+[submodule "vim-janus/.vim"]
+	path = vim-janus/.vim
+	url = https://github.com/carlhuda/janus.git
+	ignore = dirty
