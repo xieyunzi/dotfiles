@@ -23,8 +23,8 @@ let g:python3_host_skip_check = 1
 " this will place yanked text into the global clipboard
 " and allow you to paste from the global clipboard
 " without having to use any special registers
-" set clipboard=unnamed,unnamedplus
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
+
 " "}}}
 
 " Themes "{{{
