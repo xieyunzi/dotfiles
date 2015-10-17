@@ -1,1 +1,0 @@
-echomsg "test message"

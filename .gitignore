@@ -1,7 +1,9 @@
 # vim file
-vim/.vim/bundle/
 vim/.vim/_backup
 vim/.vim/_temp
+vim/.vim/.netrwhist
+vim/.vim/bundle/
+vim/.vim/shada/
 
 .DS_Store
 .AppleDouble

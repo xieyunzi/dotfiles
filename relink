@@ -1,8 +1,10 @@
 #!/bin/bash
+DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # base
-stow -t $HOME shell git
+stow -d $DIR -t $HOME shell git
 # language
-stow -t $HOME ruby lisp nodejs
+stow -d $DIR -t $HOME ruby lisp nodejs
 # vim
-stow -t $HOME vim-janus
+stow -d $DIR -t $HOME vim-janus
+# stow -d $DIR -t $HOME vim

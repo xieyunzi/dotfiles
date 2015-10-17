@@ -11,7 +11,5 @@
 let g:vim_path = expand("~/.vim")
 
 " Source configuration files
-" exe 'source ' . g:vim_path . '/need_clean_up.vim'
-exe 'source ' . g:vim_path . '/janus/vim/vimrc'
-" exe 'source /Users/xieyunzi/.dotfiles/vim/.vim/core.vim'
-exe 'source /Users/xieyunzi/.dotfiles/vim/.vim/test.vim'
+exe 'source ' . g:vim_path . '/settings.vim'
+exe 'source ' . g:vim_path . '/plugins.vim'
