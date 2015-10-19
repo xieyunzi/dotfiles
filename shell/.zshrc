@@ -87,9 +87,11 @@ source $ZSH/oh-my-zsh.sh
 
 # add by xyz ---------------------------------------------
 #
-# history, tab sessions don't share the command history with each other
+# history, sessions don't share the command history with each other
+# although when you start new session
+# it gets all the previous history from all sessions before it
 # http://superuser.com/questions/410965/command-history-in-zsh
-setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
 
 # for hh https://github.com/dvorka/hstr
 export HISTFILE=~/.zsh_history  # ensure history file visibility
