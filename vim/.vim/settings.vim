@@ -10,6 +10,29 @@ let s:is_msys = ($MSYSTEM =~? 'MINGW\d\d')
 " must be first, because it changes other options as a side effect
 set nocompatible
 filetype plugin indent on
+syntax on               " enable syntax
+
+" Match and search
+set hlsearch    " highlight search
+set ignorecase  " Do case in sensitive matching with
+set smartcase   " be sensitive when there's a capital letter
+set incsearch
+
+" Formatting
+set backspace=indent,eol,start  " more powerful backspacing
+
+set tabstop=2    " Set the default tabstop
+set softtabstop=2
+set shiftwidth=2 " Set the default shift width for indents
+set expandtab   " Make tabs into spaces (set by tabstop)
+set smarttab " Smarter tab levels
+
+" Visual
+set number  " Line numbers on
+set novisualbell  " No blinking
+set noerrorbells  " No noise.
+set laststatus=2  " Always show status line.
+set foldenable " Turn on folding
 
 " Tell vimball to get lost.
 let g:loaded_vimballPlugin    = 1
