@@ -23,6 +23,11 @@ alias l="ls -lhT"
 alias ll="ls -alhT"
 alias g=git
 
+# wget alias
+# http://www.mymacosx.com/terminal/wget-replacement-macos.html
+# http://superuser.com/questions/142459/persistent-retrying-resuming-downloads-with-curl
+alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
+
 # http://alias.sh/paginated-colored-tree
 ltree()
 {

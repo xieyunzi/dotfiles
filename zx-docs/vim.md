@@ -1,10 +1,14 @@
-# genereate ctags file
+## genereate ctags file
 
 ```bash
 # for ruby
 ripper-tags -R .
 ```
 
-# plugins
+## how-can-i-delete-the-current-file-in-vim
 
-https://github.com/szw/vim-tags.git
+```vimL
+:call delete(expand('%'))
+```
+
+http://stackoverflow.com/questions/16678661/how-can-i-delete-the-current-file-in-vim
