@@ -5,6 +5,8 @@
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
+export EDITOR=vi
+
 # history
 # http://stackoverflow.com/questions/19454837/bash-histsize-vs-histfilesize
 # http://zsh.sourceforge.net/Guide/zshguide02.html
