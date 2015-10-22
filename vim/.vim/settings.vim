@@ -111,4 +111,10 @@ let g:easytags_by_filetype    = 1
 " vim-tags
 let g:vim_tags_auto_generate  = 0
 
+" deoplete
+" https://github.com/Shougo/deoplete.nvim.git
+if has("nvim")
+  let g:deoplete#enable_at_startup = 1
+end
+
 " "}}}

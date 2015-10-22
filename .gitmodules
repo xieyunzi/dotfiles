@@ -8,3 +8,6 @@
 [submodule "tmux/.tmux/plugins/tpm"]
 	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "vim-janus/.janus"]
+	path = vim-janus/.janus
+	url = https://github.com/xieyunzi/janus.git
