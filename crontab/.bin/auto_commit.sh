@@ -7,7 +7,7 @@ log_info () { echo "--- INF ---: $1"; }
 log_error () { echo "--- ERR ---: $1"; }
 
 # PROJECT_PATH=$(pwd)
-PROJECT_PATH=~/.dotfiles
+PROJECT_PATH=$1
 
 alias git='git -C $PROJECT_PATH'
 
