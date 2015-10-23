@@ -1,0 +1,9 @@
+#!/bin/sh
+
+source ./relink
+
+# cat $HOME/.crontab/* | crontab -
+cat $HOME/.crontab/*
+
+log_info "Reloaded cron jobs. see: \n"
+crontab -l

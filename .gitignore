@@ -23,6 +23,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# local files
+*.local
+
+# log files
+.log/
+
 # vim file
 vim/.vim/_backup
 vim/.vim/_temp
@@ -32,3 +38,4 @@ vim/.vim/shada/
 
 # tmux
 tmux/.tmux/plugins/
+tmux/.tmux/resurrect

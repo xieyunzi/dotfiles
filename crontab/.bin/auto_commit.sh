@@ -27,8 +27,10 @@ else
   git add --all
 
   # commit
-  git commit -m "[AUTO COMMIT] $(date +'%Y-%m-%d %T')"
-
-  # auto push
-  git push origin $CURRENT_BRANCH
+  if [[ -z $(git commit -m "[AUTO COMMIT] $(date +'%Y-%m-%d %T')" | grep 'nothing to commit') ]]; then
+    # auto push
+    git push origin $CURRENT_BRANCH
+  else
+    log_info "nothing to commit"
+  fi
 fi
