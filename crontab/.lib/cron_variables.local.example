@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "--- INF ---: $0 local variables loaded."

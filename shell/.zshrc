@@ -1,5 +1,7 @@
 export SHELL=/bin/zsh
 alias loadrc="source $HOME/.zshrc"
+# replying Yes and automatically upgrade ohmyzsh
+export DISABLE_UPDATE_PROMPT=true
 # script path
 echo $0:A
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"

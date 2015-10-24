@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # From http://www.cliki.net/rlwrap
 # See above URL on how to generate ${HOME}/.sbcl_completions
 

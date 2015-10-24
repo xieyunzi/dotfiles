@@ -2,8 +2,7 @@
 
 source ./relink
 
-# cat $HOME/.crontab/* | crontab -
-cat $HOME/.crontab/*
+cat $HOME/.crontab/* | crontab -
 
 log_info "Reloaded cron jobs. see: \n"
 crontab -l

@@ -1,1 +1,0 @@
-*/5 * * * * /bin/sh $HOME/.bin/auto_commit.sh $HOME/.dotfiles

@@ -1,0 +1,5 @@
+# auto commit dotfiles
+*/5 * * * * . $HOME/.lib/cron_variables; /bin/sh $HOME/.bin/auto_commit.sh $DOTFILE_PATH
+0 * * * * . $HOME/.lib/cron_variables; /usr/local/bin/brew update
+# which upgrade_oh_my_zsh
+0 * * * * . $HOME/.lib/cron_variables; env ZSH=$ZSH /bin/sh $ZSH/tools/upgrade.sh

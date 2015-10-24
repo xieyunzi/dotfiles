@@ -1,0 +1,6 @@
+#!/bin/sh
+
+DOTFILE_PATH=$HOME/.dotfiles
+
+# keep this line at the bottom of this file
+if [ -f $HOME/.lib/cron_variables.local ]; then source $HOME/.lib/cron_variables.local; fi

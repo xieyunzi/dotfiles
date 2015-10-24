@@ -1,0 +1,16 @@
+#!/bin/sh
+
+FILEPATH_MD5=$(echo -n $0 | md5)
+echo $FILEPATH_MD5
+
+CRONTAB_LOG_PATH=$HOME/.log/crontab
+mkdir -p $CRONTAB_LOG_PATH
+touch $CRONTAB_LOG_PATH/$FILEPATH_MD5
+
+lastmod () {
+  FILEPATH=$1
+  # echo $(date +%s) - $(stat -f%c "$FILEPATH")
+  echo "Last modified" $(($(date +%s) - $(stat -f%c "$FILEPATH"))) "seconds ago"
+}
+
+lastmod $0

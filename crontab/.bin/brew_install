@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby
+
+fundaments =
+  %w(
+    git
+    stow
+    tmux
+  )
+
+languages =
+  %w(
+    ruby-build
+    rbenv
+    rbenv-gem-rehash
+    rbenv-gemset
+    nvm
+    sbcl
+    clisp
+    go
+    lua
+    python
+    python3
+  )
+
+tools =
+  %w(
+    the_silver_searcher
+    automake
+    bash-completion
+    gcc
+    libgit2
+    gdb
+    readline
+    rlwrap
+    cloc
+    gettext
+    cmake
+    sqlite
+    openssl
+    ctags
+    docker
+    docker-machine
+    docker-compose
+    tree
+    hh
+    proxychains-ng
+    wireshark
+  )
+
+mac_apps =
+  %w(
+    brew-cask
+    macvim
+    rmtrash
+  )
+
+applications = fundaments + languages + tools + mac_apps
+`which proxychains4 | grep 'not found'`
+`brew tap homebrew/dupes`
+`brew update && brew install #{applications.join(' ')}`
