@@ -54,7 +54,7 @@ ZSH_THEME="theunraveler"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx terminalapp git git-flow ruby rails z emoji)
+plugins=(osx terminalapp git git-flow ruby z emoji)
 
 # User configuration
 
