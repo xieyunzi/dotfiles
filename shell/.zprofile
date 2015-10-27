@@ -1,1 +1,1 @@
-if [ -f ~/.zshrc ]; then . ~/.zshrc; fi
+if [ -e ~/.zshrc ]; then . ~/.zshrc; fi

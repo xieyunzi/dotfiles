@@ -17,7 +17,7 @@ export SAVEHIST=${HISTFILESIZE}
 # brew prefix path
 export BREW_PREFIX_PATH=$(brew --prefix)
 
-if [ -f "$BREW_PREFIX_PATH/etc/profile.d/z.sh" ]; then
+if [ -e "$BREW_PREFIX_PATH/etc/profile.d/z.sh" ]; then
   . "$BREW_PREFIX_PATH/etc/profile.d/z.sh"
 fi
 
@@ -69,9 +69,14 @@ export PATH="$PATH:$JAVA_HOME/bin"
 export CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
 
 # android sdk
-# export ANDROID_HOME=${HOME}/Applications/android-sdk-macosx
-export ANDROID_HOME=${HOME}/Library/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+if [ -e "$HOME/Library/Android/sdk" ]; then
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+elif [ -e /usr/local/opt/android-sdk ]; then
+  export ANDROID_HOME=/usr/local/opt/android-sdk
+elif [ -e $(brew --prefix android) ]; then
+  export ANDROID_HOME=$(brew --prefix android)
+fi
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # haskell
 export PATH="$HOME/Library/Haskell/bin:$PATH"
@@ -87,4 +92,4 @@ if which nvim > /dev/null; then alias vi=nvim; fi
 export PATH="$HOME/.bin:$PATH"
 
 # load custom profile
-if [ -f "$HOME/.profile_custom" ]; then . "$HOME/.profile_custom"; fi
+if [ -e "$HOME/.profile.local" ]; then . "$HOME/.profile.local"; fi
