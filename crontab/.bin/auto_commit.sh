@@ -23,6 +23,8 @@ else
   # git symbolic-ref --short HEAD
   log_info "current branch: $CURRENT_BRANCH"
 
+  git pull origin $CURRENT_BRANCH
+
   # add all
   git add --all
 
