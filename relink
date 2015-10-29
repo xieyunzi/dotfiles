@@ -15,3 +15,6 @@ stow -d $DOTFILE_DIR -t $HOME vim-janus
 # stow -d $DOTFILE_DIR -t $HOME vim
 
 log_info "Relinked rc files."
+
+log_info "Dead symbolic: "
+find -L $HOME -maxdepth 3 -type l

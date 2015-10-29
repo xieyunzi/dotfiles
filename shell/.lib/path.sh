@@ -3,8 +3,8 @@ lazy_source() {
 }
 
 # z jump around
-if [[ -e "/usr/local/opt/z/etc/profile.d/z.sh" ]]; then
-  . "/usr/local/opt/z/etc/profile.d/z.sh"
+if [[ -e "/usr/local/etc/profile.d/z.sh" ]]; then
+  . "/usr/local/etc/profile.d/z.sh"
 fi
 
 # nvm, lasy load nvm, because it's slow

@@ -3,7 +3,7 @@ alias loadrc="source $HOME/.zshrc"
 # replying Yes and automatically upgrade ohmyzsh
 export DISABLE_UPDATE_PROMPT=true
 # script path
-echo $0:A
+# echo $0:A
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
 # Path to your oh-my-zsh installation.
@@ -54,7 +54,7 @@ ZSH_THEME="theunraveler"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z emoji)
+# plugins=(z emoji)
 
 # User configuration
 

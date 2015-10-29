@@ -71,7 +71,7 @@ set directory^=~/.vim/_temp//      " where to put swap files.
 
 " Plugins "{{{
 
-" The Silver Searcher
+" The Silver Searcher, ctrlp
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 
@@ -79,7 +79,10 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore ".git" -g ""'
+
+" else let g:ctrlp_show_hidden = 1
 endif
 
 " Airline, see `:help airline`
