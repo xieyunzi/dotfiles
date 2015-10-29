@@ -1,5 +1,5 @@
 lazy_source() {
-    eval "$1 () { [[ -f $2 ]] && source $2 && $1 \$@ }"
+  eval "$1 () { [[ -f $2 ]] && source $2 && $1 \$@; }"
 }
 
 # z jump around
