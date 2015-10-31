@@ -2,6 +2,10 @@ alias l="ls -lhT"
 alias ll="ls -alhT"
 alias g=git
 
+# vi clean
+alias vic="vi --noplugin"
+alias vimc="vim --noplugin"
+
 # use neovim
 if [[ $HAS_NVIM -eq 1 ]]; then alias vi=nvim; fi
 
