@@ -7,21 +7,29 @@
 
 export TIMEFMT='%E'
 
+fixed_width_info() { printf "%20s : %5s\n" $1 $2; }
+
 main() {
   echo "Purging the disk cache..."
   purge
 
   # time's output is on stderr.
   zsh_elapsed_time=$( (time zsh -ilc exit) 2>&1 )
-  echo "zsh:\t$zsh_elapsed_time"
+  fixed_width_info "zsh" $zsh_elapsed_time
+
+  vim_noplugin_elapsed_time=$( (time vim --noplugin +q) 2>&1 >$(tty) )
+  fixed_width_info "vim noplugin" $vim_noplugin_elapsed_time
 
   # As above, and also vim wants its stdout to be the terminal.
   vim_elapsed_time=$( (time vim +q) 2>&1 >$(tty) )
-  echo "vim:\t$vim_elapsed_time"
+  fixed_width_info "vim" $vim_elapsed_time
 
-  if which nvim > /dev/null; then
+  if [[ -x `which nvim` ]]; then
+    neovim_noplugin_elapsed_time=$( (time nvim --noplugin +q) 2>&1 >$(tty) )
+    fixed_width_info "neovim noplugin" $neovim_noplugin_elapsed_time
+
     neovim_elapsed_time=$( (time nvim +q) 2>&1 >$(tty) )
-    echo "neovim:\t$neovim_elapsed_time"
+    fixed_width_info "neovim" $neovim_elapsed_time
   fi
 }
 
