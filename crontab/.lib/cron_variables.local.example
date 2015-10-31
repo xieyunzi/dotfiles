@@ -3,4 +3,4 @@ echo "--- INF ---: $0 local variables loaded."
 
 NEOVIM_SOURCE_PATH=$HOME/code/neovim/
 # update neovim
-# 0 * * * * . $HOME/.lib/cron_variables; cd $NEOVIM_SOURCE_PATH; /usr/local/bin/git pull origin master; /usr/bin/make
+# 30 12 * * * . $HOME/.lib/cron_variables; cd $NEOVIM_SOURCE_PATH; /usr/local/bin/git pull origin master; CMAKE_BUILD_TYPE=Release /usr/bin/make

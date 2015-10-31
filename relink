@@ -14,6 +14,10 @@ stow -d $DOTFILE_DIR -t $HOME ruby lisp nodejs
 stow -d $DOTFILE_DIR -t $HOME vim-janus
 # stow -d $DOTFILE_DIR -t $HOME vim
 
+# reload dotfiles
+[[ $SHELL == "bin/zsh" ]]  && source "$HOME/.zshrc"
+[[ $SHELL == "bin/bash" ]] && source "$HOME/.bashrc"
+
 log_info "Relinked rc files."
 
 log_info "Dead symbolic: "

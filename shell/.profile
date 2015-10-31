@@ -2,14 +2,15 @@
 # DIR="$(dirname "$(readlink -f "$0")")"
 # echo $(pwd -P)
 
-source $HOME/.lib/checks.sh
-source $HOME/.lib/alias.sh
-source $HOME/.lib/path.sh
-
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 export EDITOR=vi
+
+source $HOME/.lib/checks.sh
+source $HOME/.lib/path.sh
+source $HOME/.lib/alias.sh
+source $HOME/.lib/functions.sh
 
 # history
 # http://stackoverflow.com/questions/19454837/bash-histsize-vs-histfilesize
