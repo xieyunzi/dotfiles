@@ -1,6 +1,6 @@
 #!/bin/sh
 
 # work on osx
-if [[ -n $(uname -a | grep Darwin) ]];then
+if [[ $(uname) = 'Darwin' ]]; then
   osascript -e 'display notification "Content" with title "Title"'
 fi
