@@ -82,27 +82,47 @@ if executable('ag')
   " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore ".git" -g ""'
 
-" else let g:ctrlp_show_hidden = 1
+  " else let g:ctrlp_show_hidden = 1
 endif
 
-" Airline, see `:help airline`
-let g:airline_theme                        = 'luna'
-let g:airline#extensions#branch#enabled    = 1
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline_powerline_fonts              = 1
-let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V',
-    \ '' : 'V',
-    \ 's'  : 'S',
-    \ 'S'  : 'S',
-    \ '' : 'S',
-    \ }
+" https://github.com/itchyny/lightline.vim.git
+" http://www.blaenkdenum.com/posts/a-simpler-vim-statusline/
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
+      \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+		  \ 'separator': { 'left': "", 'right': "" },
+		  \ 'subseparator': { 'left': "|", 'right': "|" },
+      \ 'component_function': {
+      \   'readonly': 'LightLineReadonly',
+      \   'fugitive': 'LightLineFugitive'
+      \ },
+      \ 'mode_map': {
+      \   'n' : 'N',
+      \   'i' : 'I',
+      \   'R' : 'R',
+      \   'v' : 'V',
+      \   'V' : 'V-LINE',
+      \   'c' : 'COMMAND',
+      \   "\<C-v>": 'V-BLOCK',
+      \   's' : 'S',
+      \   'S' : 'S-LINE',
+      \   "\<C-s>": 'S-BLOCK',
+      \   '?': '      '
+      \ }
+      \ }
+function! LightLineReadonly()
+  return &readonly ? '' : ''
+endfunction
+function! LightLineFugitive()
+  if exists('*fugitive#head')
+    let _ = fugitive#head()
+    return strlen(_) ? ' '._ : ''
+  endif
+  return ''
+endfunction
 
 " easytags
 let g:easytags_async          = 1
