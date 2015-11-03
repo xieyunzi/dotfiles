@@ -128,4 +128,10 @@ nnoremap <silent> <a-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <a-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <a-\> :TmuxNavigatePrevious<cr>
 
+" Maps resizing a window split, use _ instead - for easy to type
+nnoremap <silent> _ <C-W>-<C-W>-<C-W>-
+nnoremap <silent> + <C-W>+<C-W>+<C-W>+
+nnoremap <silent> <M-<> <C-W><<C-W><<C-W><<C-W><<C-W><
+nnoremap <silent> <M->> <C-W>><C-W>><c-w>><c-w>><c-w>>
+
 " "}}}
