@@ -90,7 +90,7 @@ endif
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'relativepath', 'modified' ], ['ctrlpmark'] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ], ['ctrlpmark'] ],
       \   'right': [ [ 'lineinfo_percent', 'syntastic' ], [ 'fileencoding', 'fileformat'] ]
       \ },
       \ 'inactive': {
@@ -115,7 +115,7 @@ let g:lightline = {
       \ 'component': {
       \   'filename': '%t',
       \   'relativepath': '%f',
-      \   'lineinfo_percent': '⚓️  %3l:%-2v |%3p%%'
+      \   'lineinfo_percent': '⚓️  %l:%-v | %p%%'
       \ }
       \ }
 
