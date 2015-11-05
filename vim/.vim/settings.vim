@@ -90,15 +90,15 @@ endif
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
-      \   'right': [ [ 'syntastic', 'lineinfo' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'relativepath', 'modified' ], ['ctrlpmark'] ],
+      \   'right': [ [ 'lineinfo_percent', 'syntastic' ], [ 'fileencoding', 'fileformat'] ]
       \ },
-		  \ 'separator': { 'left': "", 'right': "" },
-		  \ 'subseparator': { 'left': "|", 'right': "|" },
-      \ 'component_function': {
-      \   'readonly': 'LightLineReadonly',
-      \   'fugitive': 'LightLineFugitive'
+      \ 'inactive': {
+      \   'left': [ [ 'relativepath', 'modified' ] ],
+      \   'right': [ [ 'lineinfo_percent' ], [ 'fileencoding', 'fileformat'] ]
       \ },
+      \ 'separator': { 'left': "", 'right': "" },
+      \ 'subseparator': { 'left': "|", 'right': "|" },
       \ 'mode_map': {
       \   'n' : 'N',
       \   'i' : 'I',
@@ -111,18 +111,13 @@ let g:lightline = {
       \   'S' : 'S-LINE',
       \   "\<C-s>": 'S-BLOCK',
       \   '?': '      '
+      \ },
+      \ 'component': {
+      \   'filename': '%t',
+      \   'relativepath': '%f',
+      \   'lineinfo_percent': '⚓️  %3l:%-2v |%3p%%'
       \ }
       \ }
-function! LightLineReadonly()
-  return &readonly ? '' : ''
-endfunction
-function! LightLineFugitive()
-  if exists('*fugitive#head')
-    let _ = fugitive#head()
-    return strlen(_) ? ' '._ : ''
-  endif
-  return ''
-endfunction
 
 " easytags
 let g:easytags_async          = 1
