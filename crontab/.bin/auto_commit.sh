@@ -8,6 +8,7 @@ log_error () { echo "--- ERR ---: $1"; }
 
 # PROJECT_PATH=$(pwd)
 PROJECT_PATH=$1
+SKIP_COMMIT=1
 
 alias git='git -C $PROJECT_PATH'
 
@@ -23,16 +24,28 @@ else
   # git symbolic-ref --short HEAD
   log_info "current branch: $CURRENT_BRANCH"
 
-  git pull origin $CURRENT_BRANCH
+  if [[ -z `git status --porcelain` ]]; then
+    log_info "nothing to commit"
+
+    git pull origin $CURRENT_BRANCH
+
+    exit
+  fi
+
+  if [[ $SKIP_COMMIT -eq 1 ]]; then
+    N_TITLE="$PROJECT_PATH"
+    N_CONTENT="branch $CURRENT_BRANCH has uncommitted files."
+
+    [[ $(uname) = 'Darwin' ]] && \
+      osascript -e "display notification \"$N_CONTENT\" with title \"$N_TITLE\""
+
+    exit
+  fi
 
   # add all
   git add --all
-
   # commit
-  if [[ -z $(git commit -m "[AUTO COMMIT] $(date +'%Y-%m-%d %T')" | grep 'nothing to commit') ]]; then
-    # auto push
-    git push origin $CURRENT_BRANCH
-  else
-    log_info "nothing to commit"
-  fi
+  git commit -m "[AUTO COMMIT] $(date +'%Y-%m-%d %T')"
+  # auto push
+  git push origin $CURRENT_BRANCH
 fi
