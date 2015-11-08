@@ -3,7 +3,9 @@ DOT_SHELL_LIB_ALIAS=1
 
 alias l="ls -lhT"
 alias ll="ls -alhT"
+
 alias g=git
+alias tm=tmux
 
 # vi clean
 alias vic="vi --noplugin"
