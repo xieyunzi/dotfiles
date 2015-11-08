@@ -1,3 +1,6 @@
+if [[ ! $DOT_SHELL_ZSHRC -eq 1 ]]; then
+DOT_SHELL_ZSHRC=1
+
 export SHELL=/bin/zsh
 alias loadrc="source $HOME/.zshrc"
 # replying Yes and automatically upgrade ohmyzsh
@@ -103,4 +106,6 @@ bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 # git completion
 if [ -f /usr/local/share/zsh/site-functions ]; then
   . /usr/local/share/zsh/site-functions
+fi
+
 fi

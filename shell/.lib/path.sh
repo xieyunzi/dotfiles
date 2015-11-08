@@ -1,3 +1,6 @@
+if [[ ! $DOT_SHELL_LIB_PATH -eq 1 ]]; then
+DOT_SHELL_LIB_PATH=1
+
 lazy_source() {
   eval "$1 () { [[ -f $2 ]] && source $2 && $1 \$@; }"
 }
@@ -43,3 +46,5 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 if [[ $HAS_RBENV -eq 1 ]]; then eval "$(rbenv init --no-rehash -)"; fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+fi

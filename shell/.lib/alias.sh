@@ -1,3 +1,6 @@
+if [[ ! $DOT_SHELL_LIB_ALIAS -eq 1 ]]; then
+DOT_SHELL_LIB_ALIAS=1
+
 alias l="ls -lhT"
 alias ll="ls -alhT"
 alias g=git
@@ -25,3 +28,5 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --cache=$HOME/.npm/.cache/cnpm \
   --disturl=https://npm.taobao.org/dist \
   --userconfig=$HOME/.cnpmrc"
+
+fi

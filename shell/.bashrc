@@ -1,3 +1,6 @@
+if [[ ! $DOT_SHELL_BASHRC -eq 1 ]]; then
+DOT_SHELL_BASHRC=1
+
 export SHELL=/bin/bash
 alias loadrc="source $HOME/.bashrc"
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
@@ -19,3 +22,5 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file s
 shopt -s histappend              # append new history items to .bash_history
 # if this is interactive shell, then bind hh to Ctrl-r (for Vi mode check doc)
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh \C-j"'; fi
+
+fi

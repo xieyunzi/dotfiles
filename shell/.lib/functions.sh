@@ -1,3 +1,6 @@
+if [[ ! $DOT_SHELL_LIB_FUNCTIONS -eq 1 ]]; then
+DOT_SHELL_LIB_FUNCTIONS=1
+
 dusort() {
   if [[ $IS_LINUX -eq 1 ]]; then
     du -h -d 1 $1 | sort -h
@@ -24,3 +27,5 @@ tophistory() {
     | grep -v "./" \
     | column -c3 -s " " -t | sort -nr | nl |  head -n20
 }
+
+fi

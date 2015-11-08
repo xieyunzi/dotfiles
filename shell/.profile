@@ -1,3 +1,6 @@
+if [[ ! $DOT_SHELL_PROFILE -eq 1 ]]; then
+DOT_SHELL_PROFILE=1
+
 # DIR="$(cd "$(dirname "$0")" && pwd)"
 # DIR="$(dirname "$(readlink -f "$0")")"
 # echo $(pwd -P)
@@ -23,3 +26,5 @@ export SAVEHIST=${HISTFILESIZE}
 export PATH="$HOME/.bin:$PATH"
 # load custom profile
 if [[ -e "$HOME/.profile.local" ]]; then . "$HOME/.profile.local"; fi
+
+fi
