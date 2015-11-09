@@ -15,7 +15,7 @@ dusort() {
 # http://alias.sh/paginated-colored-tree
 ltree() { tree -C $* | less -R; }
 
-open_chrome() { open -a Google\ Chrome $1 }
+open_chrome() { open -a Google\ Chrome $1; }
 open_google() { open_chrome "https://google.com/search?q=$1"; }
 open_baidu()  { open_chrome "https://www.baidu.com/s?wd=$1";  }
 alias goo=open_google

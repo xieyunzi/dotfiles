@@ -1,9 +1,14 @@
 require 'benchmark'
 
-Benchmark.bm do |r|
-  r.report do
-    10.times do
-      `source ~/.bashrc`
+Benchmark.bm(7, 'avg') do |r|
+  n = 10
+
+  t =
+    r.report('total') do
+      n.times do
+        `source ~/.bashrc`
+      end
     end
-  end
+
+  [t/n]
 end
