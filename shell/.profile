@@ -9,6 +9,7 @@ export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 export EDITOR=vi
+export LANG=en_US.UTF-8
 
 source $HOME/.lib/checks.sh
 source $HOME/.lib/path.sh
