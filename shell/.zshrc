@@ -91,7 +91,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # add by xyz ---------------------------------------------
-#
+
+# for fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # history, sessions don't share the command history with each other
 # although when you start new session
 # it gets all the previous history from all sessions before it

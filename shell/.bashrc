@@ -5,6 +5,9 @@ export SHELL=/bin/bash
 alias loadrc="source $HOME/.bashrc"
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
+# for fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi

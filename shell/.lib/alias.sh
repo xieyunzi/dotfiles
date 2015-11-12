@@ -31,4 +31,11 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --disturl=https://npm.taobao.org/dist \
   --userconfig=$HOME/.cnpmrc"
 
+# for fzf https://github.com/junegunn/fzf
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore ".git" -g ""'
+export FZF_DEFAULT_OPTS="--reverse --inline-info"
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_TMUX_HEIGHT=20
+
 fi
