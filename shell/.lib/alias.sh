@@ -29,9 +29,11 @@ alias tm=tmux
 # use neovim
 if [[ $HAS_NVIM -eq 1 ]]; then alias vi=nvim; fi
 
-vi2="vi -O2 "
+alias vi2="vi -O2 "
 
 # }}}
+
+alias sqlite3_rl="rlwrap sqlite3"
 
 # wget alias
 # http://www.mymacosx.com/terminal/wget-replacement-macos.html

@@ -7,7 +7,7 @@ alias loadrc="source $HOME/.zshrc"
 export DISABLE_UPDATE_PROMPT=true
 # script path
 # echo $0:A
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+[[ -s "$HOME/.lib/lead" ]] && source "$HOME/.lib/lead"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

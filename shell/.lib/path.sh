@@ -27,7 +27,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export JAVA_BIN="$JAVA_HOME/bin"
-export PATH="$PATH:$JAVA_HOME/bin"
+export PATH="$JAVA_HOME/bin:$PATH"
 export CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
 
 # android sdk
@@ -36,7 +36,7 @@ if [[ -e /usr/local/opt/android-sdk ]]; then
 elif [[ -e "$HOME/Library/Android/sdk" ]]; then
   export ANDROID_HOME=$HOME/Library/Android/sdk
 fi
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 
 # haskell
 export PATH="$HOME/Library/Haskell/bin:$PATH"
@@ -45,6 +45,6 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 # https://github.com/carsomyr/rbenv-bundler/issues/33
 if [[ $HAS_RBENV -eq 1 ]]; then eval "$(rbenv init --no-rehash -)"; fi
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 
 fi

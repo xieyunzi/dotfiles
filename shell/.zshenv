@@ -1,1 +1,1 @@
-if [ -e ~/.zshrc ]; then . ~/.zshrc; fi
+# https://github.com/sstephenson/rbenv/wiki/Unix-shell-initialization

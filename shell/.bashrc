@@ -3,7 +3,7 @@ DOT_SHELL_BASHRC=1
 
 export SHELL=/bin/bash
 alias loadrc="source $HOME/.bashrc"
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+[[ -s "$HOME/.lib/lead" ]] && source "$HOME/.lib/lead"
 
 # for fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
