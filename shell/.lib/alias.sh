@@ -121,7 +121,7 @@ ftags() {
 fe() {
   local file
   file=$(fzf-tmux --query="$1" --select-1 --exit-0)
-  [ -n "$file" ] && ${EDITOR:-vim} "$file"
+  [ -n "$file" ] && ${EDITOR:-vi} "$file"
 }
 
 # Modified version where you can press
@@ -133,7 +133,7 @@ fo() {
   key=$(head -1 <<< "$out")
   file=$(head -2 <<< "$out" | tail -1)
   if [ -n "$file" ]; then
-    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
+    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vi} "$file"
   fi
 }
 
