@@ -39,3 +39,6 @@ vim/.vim/shada/
 # tmux
 tmux/.tmux/plugins/
 tmux/.tmux/resurrect
+
+# tmp
+zx-tmp/*
