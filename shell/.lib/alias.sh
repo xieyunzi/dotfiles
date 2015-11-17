@@ -23,14 +23,14 @@ alias g=git
 alias tm=tmux
 
 # vim {{{
-# alias vic="vi --noplugin"
-# alias vimc="vim --noplugin"
 
 # use neovim
-if [[ $HAS_NVIM -eq 1 ]]; then alias vi=nvim; fi
+if [[ $HAS_NVIM -eq 1 ]]; then
+  alias vim=nvim
+fi
 
-alias vi2="vi -O2 "
-
+alias v=vim
+alias vi2="vim -O2 "
 # }}}
 
 alias sqlite3_rl="rlwrap sqlite3"
@@ -123,7 +123,7 @@ ftags() {
 fe() {
   local file
   file=$(fzf-tmux --query="$1" --select-1 --exit-0)
-  [ -n "$file" ] && ${EDITOR:-vi} "$file"
+  [ -n "$file" ] && ${EDITOR:-vim} "$file"
 }
 
 # Modified version where you can press
@@ -135,7 +135,7 @@ fo() {
   key=$(head -1 <<< "$out")
   file=$(head -2 <<< "$out" | tail -1)
   if [ -n "$file" ]; then
-    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vi} "$file"
+    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
 }
 
