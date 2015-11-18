@@ -149,4 +149,7 @@ nnoremap <silent> + <C-W>+<C-W>+<C-W>+
 nnoremap <silent> <M-<> <C-W><<C-W><<C-W><<C-W><<C-W><
 nnoremap <silent> <M->> <C-W>><C-W>><c-w>><c-w>><c-w>>
 
+" fzf
+set rtp+=/usr/local/opt/fzf
+
 " "}}}
