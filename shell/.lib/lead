@@ -10,10 +10,15 @@ DOT_SHELL_LIB_LEAD=1
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
-export EDITOR=vi
+source $HOME/.lib/checks.sh
+
+if [[ $HAS_NVIM -eq 1 ]]; then
+  export EDITOR=nvim
+else
+  export EDITOR=vim
+fi
 export LANG=en_US.UTF-8
 
-source $HOME/.lib/checks.sh
 source $HOME/.lib/path.sh
 source $HOME/.lib/alias.sh
 source $HOME/.lib/functions.sh
