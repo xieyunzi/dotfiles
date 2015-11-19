@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'benchmark'
 
 Benchmark.bm(7, 'avg') do |r|
