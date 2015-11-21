@@ -24,3 +24,8 @@ class Hash
 end
 
 require 'json'
+require 'yaml'
+require 'digest'
+require 'benchmark'
+
+require 'redis'
