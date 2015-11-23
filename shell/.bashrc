@@ -16,6 +16,7 @@ if [ -f /usr/local/etc/bash_completion.d ]; then
   . /usr/local/etc/bash_completion.d
 fi
 
+export HISTFILE=~/.bash_history  # ensure history file visibility
 # add this configuration to ~/.bashrc
 export HH_CONFIG=hicolor         # get more colors
 export HISTCONTROL=ignorespace   # leading space hides commands from history

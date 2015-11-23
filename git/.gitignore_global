@@ -12,3 +12,6 @@ tags
 .tags1
 
 config/environments/development.rb
+
+# ruby
+.byebug_history
