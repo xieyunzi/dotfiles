@@ -7,6 +7,12 @@ export FZF_DEFAULT_OPTS="--reverse --inline-info"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_TMUX_HEIGHT=20
 
+fag(){
+  local line
+  line=`ag --nocolor "$1" | fzf` \
+    && $EDITOR $(cut -d':' -f1 <<< "$line") +$(cut -d':' -f2 <<< "$line")
+}
+
 # fd - cd to selected directory
 fd() {
   DIR=`find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf-tmux` \
