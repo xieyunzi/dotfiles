@@ -141,9 +141,14 @@ fi
 # Switch tmux-sessions
 fs() {
   local session
-  session=$(tmux list-sessions -F "#{session_name}" | \
-    fzf-tmux --query="$1" --select-1 --exit-0) &&
+  session=$(tmux list-sessions | fzf-tmux --query="$1" --select-1 --exit-0 | cut -d':' -f 1) &&
     tmux switch-client -t "$session"
+}
+
+fskill() {
+  local session
+  session=$(tmux list-sessions | fzf-tmux --query="$1" --select-1 --exit-0 | cut -d':' -f 1) &&
+    tmux kill-session -t "$session"
 }
 
 # ftpane - switch pane (@george-b)
