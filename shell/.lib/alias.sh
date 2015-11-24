@@ -19,16 +19,7 @@ elif [ $IS_MAC -eq 1 ]; then
   alias ls='ls -G'
 fi
 
-# alias g=git
-# No arguments: `git status`
-# With arguments: acts like `git`
-g() {
-  if [[ $# -gt 0 ]]; then
-    git "$@"
-  else
-    git status
-  fi
-}
+alias g=git
 alias tm=tmux
 
 # vim {{{
