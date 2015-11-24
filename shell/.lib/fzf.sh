@@ -6,6 +6,7 @@ export FZF_DEFAULT_OPTS="--reverse --inline-info"
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_TMUX_HEIGHT=20
+
 # fd - cd to selected directory
 fd() {
   DIR=`find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf-tmux` \
@@ -141,8 +142,13 @@ fi
 # Switch tmux-sessions
 fs() {
   local session
-  session=$(tmux list-sessions | fzf-tmux --query="$1" --select-1 --exit-0 | cut -d':' -f 1) &&
+  session=$(tmux list-sessions | fzf-tmux --query="$1" --select-1 --exit-0 | cut -d':' -f 1)
+
+  if [[ -z "$TMUX" ]]; then
+    tmux attach -t "$session"
+  else
     tmux switch-client -t "$session"
+  fi
 }
 
 fskill() {
