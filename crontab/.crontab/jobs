@@ -5,4 +5,4 @@
 0 */3 * * * . $HOME/.lib/cron_variables; env ZSH=$ZSH /bin/sh $ZSH/tools/upgrade.sh
 # time to go to sleep
 */10 23 * * * [[ $(uname) = 'Darwin' ]] && osascript -e 'display notification "Time to go to sleep !!!" with title "Go to sleep"'
-* 0,1,2,3 * * * [[ $(uname) = 'Darwin' ]] && osascript -e 'display notification "Time to go to sleep !!!" with title "Go To sleep"'
+* 0,1,2,3 * * * [[ $(uname) = 'Darwin' ]] && osascript -e 'display notification "Time to go to sleep !!!" with title "Go To sleep"' && say "Sleeping time."
