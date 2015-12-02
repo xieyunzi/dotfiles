@@ -1,3 +1,6 @@
+" Leader `<space>`
+let mapleader = " "
+
 let s:is_mac = has('mac')
 let s:is_cygwin = has('win32unix') || has('win64unix') "treat this as mintty
 let s:is_windows = has('win32') || has('win64')
@@ -33,6 +36,13 @@ set novisualbell  " No blinking
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
 set foldenable " Turn on folding
+
+" Make it obvious where 80 characters is
+" set textwidth=80
+" set colorcolumn=+1
+
+" Display extra whitespace
+" set list listchars=tab:»·,trail:·,nbsp:·
 
 " Tell vimball to get lost.
 let g:loaded_vimballPlugin    = 1
@@ -151,5 +161,9 @@ nnoremap <silent> <M->> <C-W>><C-W>><c-w>><c-w>><c-w>>
 
 " fzf
 set rtp+=/usr/local/opt/fzf
+
+" vim-signature, cause `vim-easyclip` shadow mark feature
+" https://github.com/svermeulen/vim-easyclip/blob/master/doc/easyclip.txt
+nnoremap gm m
 
 " "}}}
