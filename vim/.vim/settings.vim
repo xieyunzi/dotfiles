@@ -162,8 +162,21 @@ nnoremap <silent> <M->> <C-W>><C-W>><c-w>><c-w>><c-w>>
 " fzf
 set rtp+=/usr/local/opt/fzf
 
-" vim-signature, cause `vim-easyclip` shadow mark feature
+" `vim-easyclip` shadow mark feature
 " https://github.com/svermeulen/vim-easyclip/blob/master/doc/easyclip.txt
 nnoremap gm m
+
+" vim-bookmarks
+nmap <Leader>m <Plug>BookmarkToggle
+nmap <Leader>i <Plug>BookmarkAnnotate
+nmap <Leader>a <Plug>BookmarkShowAll
+nmap <Leader>j <Plug>BookmarkNext
+nmap <Leader>k <Plug>BookmarkPrev
+nmap <Leader>c <Plug>BookmarkClear
+nmap <Leader>x <Plug>BookmarkClearAll
+nmap <Leader>kk <Plug>BookmarkMoveUp
+nmap <Leader>jj <Plug>BookmarkMoveDown
+
+let g:bookmark_sign = '❥'
 
 " "}}}
