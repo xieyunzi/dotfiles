@@ -145,10 +145,15 @@ if [ -n "$TMUX_PANE" ]; then
 fi
 
 # tmux {{{
+
+_tmux_session() {
+  tmux list-sessions | fzf-tmux --query="$1" --select-1 --exit-0 | cut -d':' -f 1
+}
+
 # Switch tmux-sessions
 fs() {
   local session
-  session=$(tmux list-sessions | fzf-tmux --query="$1" --select-1 --exit-0 | cut -d':' -f 1)
+  session=$(_tmux_session $1)
 
   if [[ -z "$TMUX" ]]; then
     tmux attach -t "$session"
@@ -157,10 +162,23 @@ fs() {
   fi
 }
 
+# attach tmux-sessions and detach others
+# http://stackoverflow.com/questions/22138211/how-do-i-disconnect-all-other-users-in-tmux
+fs-detach-others() {
+  local session
+  session=$(_tmux_session $1)
+
+  # d=detach other clinents (so only you can attach to this session)
+  if [[ -z "$TMUX" ]]; then
+    tmux attach -dt "$session"
+  else
+    tmux switch-client -dt "$session"
+  fi
+}
+
 fskill() {
   local session
-  session=$(tmux list-sessions | fzf-tmux --query="$1" --select-1 --exit-0 | cut -d':' -f 1) &&
-    tmux kill-session -t "$session"
+  session=$(_tmux_session $1) && tmux kill-session -t "$session"
 }
 
 # ftpane - switch pane (@george-b)
