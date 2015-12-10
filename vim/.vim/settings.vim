@@ -170,13 +170,16 @@ nnoremap gm m
 nmap <Leader>m <Plug>BookmarkToggle
 nmap <Leader>i <Plug>BookmarkAnnotate
 nmap <Leader>a <Plug>BookmarkShowAll
-nmap <Leader>j <Plug>BookmarkNext
-nmap <Leader>k <Plug>BookmarkPrev
+nmap <Leader>nonej <Plug>BookmarkNext
+nmap <Leader>nonek <Plug>BookmarkPrev
 nmap <Leader>c <Plug>BookmarkClear
 nmap <Leader>x <Plug>BookmarkClearAll
-nmap <Leader>kk <Plug>BookmarkMoveUp
-nmap <Leader>jj <Plug>BookmarkMoveDown
+nmap <Leader>nonekk <Plug>BookmarkMoveUp
+nmap <Leader>nonejj <Plug>BookmarkMoveDown
 
 let g:bookmark_sign = '❥'
+
+" https://github.com/Shougo/unite.vim
+nnoremap <silent><leader>i :Unite -start-insert<CR>
 
 " "}}}
