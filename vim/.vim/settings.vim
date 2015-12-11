@@ -182,4 +182,20 @@ let g:bookmark_sign = '❥'
 " https://github.com/Shougo/unite.vim
 nnoremap <silent><leader>i :Unite -start-insert<CR>
 
+" ultisnips & YouCompleteMe "{{{
+" http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme
+
+" https://github.com/Valloric/YouCompleteMe.
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" https://github.com/SirVer/ultisnips
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" "}}}
+
 " "}}}
