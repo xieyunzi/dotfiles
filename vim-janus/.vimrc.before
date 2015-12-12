@@ -1,1 +1,1 @@
-call janus#disable_plugin('zoomwin', "I don't like it")
+call janus#disable_plugin('zoomwin', "use zoomwintab.vim stead")
