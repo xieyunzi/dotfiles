@@ -1,25 +1,15 @@
-" don't bother with vi compatibility
-set nocompatible              " be iMproved, required
+"
+" vim setup
+" define global variables
+" load separated vimscript files
+"
+" note: learn from janus and other project, but i need simple and clean
+" settings
+"
 
-" enable syntax highlighting
-syntax enable
+" Define paths
+let g:vim_path = expand("~/.vim")
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" install Vundle bundles
-if filereadable(expand("./.vimrc.bundles"))
-  source ./.vimrc.bundles
-  source ./.vimrc.bundles.local
-endif
-
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Source configuration files
+exe 'source ' . g:vim_path . '/settings.vim'
+exe 'source ' . g:vim_path . '/plugins.vim'
