@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'bundler'
+
+Bundler.load.specs.sort_by { |s| s.name }.each do |s|
+  puts s.full_gem_path
+end

@@ -6,6 +6,7 @@
 .db_branch_dumps/
 
 tags
+tags-ja
 
 # for atom ctags
 .tags
