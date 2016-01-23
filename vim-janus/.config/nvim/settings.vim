@@ -79,6 +79,10 @@ set directory^=~/.vim/_temp//      " where to put swap files.
 
 " "}}}
 
+" file encoding https://www.zhihu.com/question/22363620
+" set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
+
 " Plugins "{{{
 
 " The Silver Searcher, ctrlp
