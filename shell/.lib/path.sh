@@ -17,7 +17,7 @@ NVM_SOURCE=/usr/local/opt/nvm/nvm.sh
 lazy_source nvm $NVM_SOURCE
 
 # golang
-export GOROOT=$(go env GOROOT)
+export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/.go
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 

@@ -42,3 +42,7 @@ tmux/.tmux/resurrect
 
 # tmp
 zx-tmp/*
+
+
+# ignore file with example
+misc/.proxychains/proxychains.conf
