@@ -26,11 +26,11 @@ alias tm=tmux
 
 # use neovim
 if [[ $HAS_NVIM -eq 1 ]]; then
-  alias vim=nvim
+  alias v=nvim
+else
+  alias v=vim
 fi
-
-alias v=vim
-alias vi2="vim -O2 "
+alias vi2="v -O2 "
 # }}}
 
 alias sqlite3_rl="rlwrap sqlite3"
