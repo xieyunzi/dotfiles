@@ -5,46 +5,50 @@ lazy_source() {
   eval "$1 () { [[ -f $2 ]] && source $2 && $1 \$@; }"
 }
 
-# z jump around
-if [[ -e "/usr/local/etc/profile.d/z.sh" ]]; then
-  . "/usr/local/etc/profile.d/z.sh"
-fi
-
-# nvm, lasy load nvm, because it's slow
-# https://github.com/creationix/nvm/issues/539
-export NVM_DIR="$HOME/.nvm"
-NVM_SOURCE=/usr/local/opt/nvm/nvm.sh
-lazy_source nvm $NVM_SOURCE
-
-# golang
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/.go
-export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
-
-# heroku
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# java
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export JAVA_BIN="$JAVA_HOME/bin"
-export PATH="$JAVA_HOME/bin:$PATH"
-export CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
-
-# android sdk
-if [[ -e /usr/local/opt/android-sdk ]]; then
-  export ANDROID_HOME=/usr/local/opt/android-sdk
-elif [[ -e "$HOME/Library/Android/sdk" ]]; then
-  export ANDROID_HOME=$HOME/Library/Android/sdk
-fi
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
-
-# haskell
-export PATH="$HOME/Library/Haskell/bin:$PATH"
-
 # ruby
 # https://github.com/carsomyr/rbenv-bundler/issues/33
 if [[ $HAS_RBENV -eq 1 ]]; then eval "$(rbenv init --no-rehash -)"; fi
 
+# http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
+
+# golang
+# var: GOROOT
+if [[ -z ${GOROOT+x} ]]; then
+  export GOPATH=$HOME/.go
+  export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+fi
+
+# heroku
+# var: HEROKU_HOME
+if [[ -z ${HEROKU_HOME+x} ]]; then export PATH="$HEROKU_HOME/bin:$PATH"; fi
+
+# java
+# var: JAVA_HOME
+if [[ -z ${JAVA_HOME+x} ]]; then
+  export JAVA_BIN="$JAVA_HOME/bin"
+  export CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
+  export PATH="$JAVA_HOME/bin:$PATH"
+fi
+
+# android
+# var: ANDROID_HOME
+if [[ -z ${ANDROID_HOME+x} ]]; then
+  export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+fi
+
+# haskell
+# HASKELL_HOME
+if [[ -z ${HASKELL_HOME+x} ]]; then export PATH="$HASKELL_HOME/bin:$PATH"; fi
+
+if [[ $IS_MAC -eq 1 ]]; then
+  # for mac
+  source $HOME/.lib/path.macosx.sh
+elif [[ $IS_LINUX -eq 1 ]]; then
+  # for linux
+  source $HOME/.lib/path.linux.sh
+fi
+
+# common
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 
 fi
