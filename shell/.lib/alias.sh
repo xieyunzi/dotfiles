@@ -22,7 +22,7 @@ fi
 alias g=git
 alias tm=tmux
 
-# vim {{{
+# for vim {{{
 
 # use neovim
 if [[ $HAS_NVIM -eq 1 ]]; then
@@ -35,10 +35,21 @@ alias vi2="v -O2 "
 
 alias sqlite3_rl="rlwrap sqlite3"
 
+# for curl {{{
+
+# get web server headers
+alias header='curl -I'
+# find out if remote server supports gzip / mod_deflate or not
+alias headerc='curl -I --compress'
+
 # wget alias
 # http://www.mymacosx.com/terminal/wget-replacement-macos.html
 # http://superuser.com/questions/142459/persistent-retrying-resuming-downloads-with-curl
-alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
+if [[ ! -x `which wget` ]]; then
+  alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
+fi
+
+# }}}
 
 if [[ $IS_MAC -eq 1 ]]; then
   alias psqlstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
@@ -46,10 +57,35 @@ if [[ $IS_MAC -eq 1 ]]; then
   # alias psqlstop='pg_ctl stop'
 fi
 
-#alias for cnpm
+# alias for cnpm
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --cache=$HOME/.npm/.cache/cnpm \
   --disturl=https://npm.taobao.org/dist \
   --userconfig=$HOME/.cnpmrc"
+
+if [[ $IS_LINUX -eq 1 ]]; then
+  # iptables alias for linux
+  # usage: iptlist -t nat
+  alias iptlist="sudo /sbin/iptables -L -n -v --line-numbers"
+  alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+  alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+  alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
+
+  # Get system memory, cpu usage quickly {{{
+  ## pass options to free
+  alias meminfo='free -m -l -t'
+
+  ## get top process eating memory
+  alias psmem='ps auxf | sort -nr -k 4'
+  alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+  ## get top process eating cpu
+  alias pscpu='ps auxf | sort -nr -k 3'
+  alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+  ## Get server cpu info
+  alias cpuinfo='lscpu'
+  # }}}
+fi
 
 fi
