@@ -12,7 +12,6 @@ stow -d $DOTFILE_DIR -t $HOME shell git tmux crontab misc
 stow -d $DOTFILE_DIR -t $HOME ruby lisp nodejs
 # vim
 stow -d $DOTFILE_DIR -t $HOME vim-janus
-# stow -d $DOTFILE_DIR -t $HOME vim
 # emacs
 stow -d $DOTFILE_DIR -t $HOME emacs
 
