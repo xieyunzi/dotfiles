@@ -5,9 +5,17 @@ lazy_source() {
   eval "$1 () { [[ -f $2 ]] && source $2 && $1 \$@; }"
 }
 
-# ruby
+# ruby, rbenv
 # https://github.com/carsomyr/rbenv-bundler/issues/33
 if [[ $HAS_RBENV -eq 1 ]]; then eval "$(rbenv init --no-rehash -)"; fi
+
+# pythen, pyenv
+# https://github.com/yyuu/pyenv
+if [[ -x $HOME/.pyenv ]]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 # http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
 
