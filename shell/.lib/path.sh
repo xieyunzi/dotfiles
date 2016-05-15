@@ -5,6 +5,14 @@ lazy_source() {
   eval "$1 () { [[ -f $2 ]] && source $2 && $1 \$@; }"
 }
 
+if [[ $IS_MAC -eq 1 ]]; then
+  # for mac
+  source $HOME/.lib/path.macosx.sh
+elif [[ $IS_LINUX -eq 1 ]]; then
+  # for linux
+  source $HOME/.lib/path.linux.sh
+fi
+
 # ruby, rbenv
 # https://github.com/carsomyr/rbenv-bundler/issues/33
 if [[ $HAS_RBENV -eq 1 ]]; then eval "$(rbenv init --no-rehash -)"; fi
@@ -21,7 +29,7 @@ fi
 
 # golang
 # var: GOROOT
-if [[ -z ${GOROOT+x} ]]; then
+if [[ -n $GOROOT ]]; then
   export GOPATH=$HOME/.go
   export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 fi
@@ -47,14 +55,6 @@ fi
 # haskell
 # HASKELL_HOME
 if [[ -z ${HASKELL_HOME+x} ]]; then export PATH="$HASKELL_HOME/bin:$PATH"; fi
-
-if [[ $IS_MAC -eq 1 ]]; then
-  # for mac
-  source $HOME/.lib/path.macosx.sh
-elif [[ $IS_LINUX -eq 1 ]]; then
-  # for linux
-  source $HOME/.lib/path.linux.sh
-fi
 
 # common
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
