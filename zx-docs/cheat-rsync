@@ -1,0 +1,51 @@
+1. Copy/Sync Files and Directory Locally
+
+# Copy/Sync a File on a Local Computer
+rsync -zvh backup.tar /tmp/backups/
+
+# Copy/Sync a Directory on Local Computer
+rsync -avzh /root/rpmpkgs /tmp/backups/
+
+2. Copy/Sync Files and Directory to or From a Server
+
+# Copy a Directory from Local Server to a Remote Server
+rsync -avz rpmpkgs/ root@192.168.0.101:/home/
+
+# Copy/Sync a Remote Directory to a Local Machine
+rsync -avzh root@192.168.0.100:/home/tarunika/rpmpkgs /tmp/myrpms
+
+3. Rsync Over SSH
+
+# Copy a File from a Remote Server to a Local Server with SSH
+rsync -avzhe ssh root@192.168.0.100:/root/install.log /tmp/
+
+# Copy a File from a Local Server to a Remote Server with SSH
+rsync -avzhe ssh backup.tar root@192.168.0.100:/backups/
+
+4. Show Progress While Transferring Data with rsync
+rsync -avzhe ssh --progress /home/rpmpkgs root@192.168.0.100:/root/rpmpkgs
+
+5. Use of –include and –exclude Options
+rsync -avze ssh --include 'R*' --exclude '*' root@192.168.0.101:/var/lib/rpm/ /root/rpm
+
+6. Use of –delete Option
+touch test.txt
+rsync -avz --delete root@192.168.0.100:/var/lib/rpm/ .
+
+(Target has the new file called test.txt, when synchronize with the source with ‘–delete‘ option, it removed the file test.txt.)
+
+7. Set the Max Size of Files to be Transferred
+rsync -avzhe ssh --max-size='200k' /var/lib/rpm/ root@192.168.0.100:/root/tmprpm
+
+8. Automatically Delete source Files after successful Transfer
+rsync --remove-source-files -zvh backup.tar /tmp/backups/
+
+9. Do a Dry Run with rsync
+rsync --dry-run --remove-source-files -zvh backup.tar /tmp/backups/
+
+10. Set Bandwidth Limit and Transfer File
+rsync --bwlimit=100 -avzhe ssh  /var/lib/rpm/  root@192.168.0.100:/root/tmprpm/
+
+
+Reference:
+http://www.tecmint.com/rsync-local-remote-file-synchronization-commands/
