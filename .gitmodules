@@ -17,3 +17,9 @@
 [submodule "vim-janus/.janus"]
 	path = vim-janus/.janus
 	url = https://github.com/xieyunzi/janus.git
+[submodule "shell/.bin/.third-party/z"]
+	path = shell/.bin/.third-party/z
+	url = https://github.com/rupa/z.git
+[submodule "shell/.bin/.third-party/rsync-time-backup"]
+	path = shell/.bin/.third-party/rsync-time-backup
+	url = https://github.com/laurent22/rsync-time-backup.git

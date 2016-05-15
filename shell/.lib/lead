@@ -34,7 +34,18 @@ export HISTSIZE=${HISTFILESIZE}
 export SAVEHIST=${HISTFILESIZE}
 
 # dotfiles custom bin file
+# `brew install libtool` for mac first
+if [[ $IS_MAC -eq 1 && -x `which gfind` ]]; then
+  export GNU_FIND=gfind
+elif [[ $IS_LINUX -eq 1 ]]; then
+  export GNU_FIND=find
+fi
+if [[ -n $GNU_FIND ]]; then
+  # http://unix.stackexchange.com/questions/17715/how-can-i-set-all-subdirectories-of-a-directory-into-path
+  export PATH=$($GNU_FIND $HOME/.bin/.third-party/* -type d -printf "%p:")$PATH
+fi
 export PATH="$HOME/.bin:$PATH"
+
 # load custom profile
 if [[ -e "$HOME/.lib/lead.local" ]]; then . "$HOME/.lib/lead.local"; fi
 

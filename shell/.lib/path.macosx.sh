@@ -1,11 +1,6 @@
 if [[ ! $DOT_SHELL_LIB_PATH_MACOSX -eq 1 ]]; then
 DOT_SHELL_LIB_PATH_MACOSX=1
 
-# z jump around
-if [[ -e "/usr/local/etc/profile.d/z.sh" ]]; then
-  . "/usr/local/etc/profile.d/z.sh"
-fi
-
 # nvm, lasy load nvm, because it's slow
 # https://github.com/creationix/nvm/issues/539
 export NVM_DIR="$HOME/.nvm"
