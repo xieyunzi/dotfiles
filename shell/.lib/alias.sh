@@ -7,8 +7,8 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
-alias l="ls -lhTF"
-alias ll="ls -alhT"
+alias l="ls -lha"
+alias ll="ls -lh"
 
 ### Colored ls
 if [ -x /usr/bin/dircolors ]; then

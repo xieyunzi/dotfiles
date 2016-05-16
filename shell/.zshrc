@@ -7,7 +7,6 @@ alias loadrc="source $HOME/.zshrc"
 export DISABLE_UPDATE_PROMPT=true
 # script path
 # echo $0:A
-[[ -s "$HOME/.lib/lead" ]] && source "$HOME/.lib/lead"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -111,5 +110,7 @@ bindkey -s "\C-r" "\eqhh\n"     # bind hh to Ctrl-r (for Vi mode check doc)
 if [ -f /usr/local/share/zsh/site-functions ]; then
   . /usr/local/share/zsh/site-functions
 fi
+
+[[ -s "$HOME/.lib/lead" ]] && source "$HOME/.lib/lead"
 
 fi
