@@ -57,7 +57,10 @@ let g:python3_host_skip_check = 1
 " and allow you to paste from the global clipboard
 " without having to use any special registers
 " set clipboard=unnamed,unnamedplus
-set clipboard=unnamedplus
+" https://github.com/neovim/neovim/issues/3097
+if exists($DISPLAY) && (executable('pbcopy') || executable('xclip') || executable('xsel')) && has('clipboard')
+  set clipboard=unnamedplus
+endif
 
 " "}}}
 
