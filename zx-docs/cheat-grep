@@ -1,0 +1,11 @@
+# Search for a string in multiple files
+
+grep -rsniH search_term *
+
+> The options mean:
+
+  r - be recursive
+  s - suppress any error messages
+  n - print the line number
+  i - do a case insensitve search
+  H - print the filename
