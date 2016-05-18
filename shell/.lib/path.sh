@@ -15,11 +15,16 @@ fi
 
 # ruby, rbenv
 # https://github.com/carsomyr/rbenv-bundler/issues/33
-if [[ $HAS_RBENV -eq 1 ]]; then eval "$(rbenv init --no-rehash -)"; fi
+# https://github.com/rbenv/rbenv
+# https://github.com/rbenv/ruby-build
+if [[ -d "$HOME/.rbenv" ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init --no-rehash -)"
+fi
 
 # pythen, pyenv
 # https://github.com/yyuu/pyenv
-if [[ -x $HOME/.pyenv ]]; then
+if [[ -d $HOME/.pyenv ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
