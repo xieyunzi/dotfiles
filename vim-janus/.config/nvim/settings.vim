@@ -58,7 +58,7 @@ let g:python3_host_skip_check = 1
 " without having to use any special registers
 " set clipboard=unnamed,unnamedplus
 " https://github.com/neovim/neovim/issues/3097
-if exists($DISPLAY) && (executable('pbcopy') || executable('xclip') || executable('xsel')) && has('clipboard')
+if exists("$DISPLAY") && (executable('pbcopy') || executable('xclip') || executable('xsel')) && has('clipboard')
   set clipboard=unnamedplus
 endif
 
