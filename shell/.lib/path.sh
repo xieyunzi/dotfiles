@@ -41,11 +41,11 @@ fi
 
 # heroku
 # var: HEROKU_HOME
-if [[ -z ${HEROKU_HOME+x} ]]; then export PATH="$HEROKU_HOME/bin:$PATH"; fi
+if [[ -n $HEROKU_HOME ]]; then export PATH="$HEROKU_HOME/bin:$PATH"; fi
 
 # java
 # var: JAVA_HOME
-if [[ -z ${JAVA_HOME+x} ]]; then
+if [[ -n $JAVA_HOME ]]; then
   export JAVA_BIN="$JAVA_HOME/bin"
   export CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
   export PATH="$JAVA_HOME/bin:$PATH"
@@ -53,13 +53,13 @@ fi
 
 # android
 # var: ANDROID_HOME
-if [[ -z ${ANDROID_HOME+x} ]]; then
+if [[ -n $ANDROID_HOME ]]; then
   export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 fi
 
 # haskell
 # HASKELL_HOME
-if [[ -z ${HASKELL_HOME+x} ]]; then export PATH="$HASKELL_HOME/bin:$PATH"; fi
+if [[ -n $HASKELL_HOME ]]; then export PATH="$HASKELL_HOME/bin:$PATH"; fi
 
 # common
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
