@@ -1,0 +1,16 @@
+# Convert M4A to MP3 using FFMPEG
+
+You will need yo make sure that you have mp encoding enabled:
+
+  $ ffmpeg -codecs help | grep 'mp3'
+
+and then something like the following could furnish at least a starting point:
+
+  $ ffmpeg -i input.m4a -acodec libmp3lame -ab 128k output.mp3
+
+and the same as a batch-convertion (all files in folder at once) should look like this
+
+  $ for f in *.m4a; do ffmpeg -i "$f" -acodec libmp3lame -ab 256k "${f%.m4a}.mp3"; done
+
+
+[Convert M4A to MP3 using FFMPEG](http://ubuntuforums.org/showthread.php?t=1614765)
