@@ -33,7 +33,9 @@ fi
 alias vi2="v -O2 "
 # }}}
 
-alias sqlite3_rl="rlwrap sqlite3"
+alias rl_sqlite3="rlwrap -a -A sqlite3"
+alias rl_iex="rlwrap -a -A iex"
+alias rl_erl="rlwrap -a -A erl"
 
 # for curl {{{
 
