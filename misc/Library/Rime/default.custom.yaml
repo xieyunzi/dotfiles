@@ -1,0 +1,12 @@
+# default.custom.yaml, 全局生效
+patch:
+  menu:
+    page_size: 9
+  schema_list:
+    # 添加小鹤双拼到方案选单
+    # - schema: double_pinyin_flypy
+    # - schema: cangjie5
+    - schema: luna_pinyin
+    - schema: luna_pinyin_simp
+    # - schema: luna_pinyin_fluency
+    # - schema: luna_pinyin_tw

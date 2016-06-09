@@ -1,0 +1,30 @@
+# 适用于【鼠须管】0.9.13+
+# 位置：~/Library/Rime/squirrel.custom.yaml
+# 用法：想要哪项生效，就删去该行行首的 "#" 字符，但注意保留用于缩进的空格
+
+patch:
+#  us_keyboard_layout: true                 # 键盘选项：应用美式键盘布局
+# 状态通知，适当，也可设为全开（always）全关（never）
+#  show_notifications_when: appropriate
+#
+#  style/color_scheme: luna                 # 选择配色方案
+#  style/horizontal: true                   # 候选窗横向显示
+#  style/inline_preedit: false              # 关闭内嵌编码，这样就可以显示首行的拼音
+#  style/corner_radius: 10                  # 窗口圆角半径
+#  style/border_height: 0                   # 窗口边界高度，大于圆角半径才有效果
+#  style/border_width: 0                    # 窗口边界宽度，大于圆角半径才有效果
+#  style/line_spacing: 1                    # 候选词的行间距
+#  style/spacing: 5                         # 在非内嵌编码模式下，预编辑和候选词之间的间距
+#  style/font_face: "Hiragino Sans GB W3"   # 字体名称
+#  style/font_point: 21                     # 字号
+
+  style:
+    alpha: 0.9
+    font_point: 19
+    horizontal: true
+    line_spacing: 2
+    corner_radius: 5
+    border_height: 6
+    border_height: 6
+    inline_preedit: false
+    color_scheme: google
