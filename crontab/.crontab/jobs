@@ -1,8 +1,9 @@
 # auto commit dotfiles
-*/30 * * * * . $HOME/.lib/cron_variables; /bin/sh $HOME/.bin/auto_commit.sh $DOTFILE_PATH
-0 */3 * * * . $HOME/.lib/cron_variables; /usr/local/bin/brew update
+# */30 * * * * . $HOME/.lib/cron_variables; /bin/sh $HOME/.bin/auto_commit.sh $DOTFILE_PATH
+0 */3 * * * . $HOME/.lib/cron_variables; /usr/local/bin/brew update > /tmp/log_brew_update
+0 */4 * * * . $HOME/.lib/cron_variables; /usr/local/bin/brew cask update > /tmp/log_brew_cask_update
 # which upgrade_oh_my_zsh
-0 */3 * * * . $HOME/.lib/cron_variables; env ZSH=$ZSH /bin/sh $ZSH/tools/upgrade.sh
+0 */3 * * * . $HOME/.lib/cron_variables; env ZSH=$ZSH /bin/sh $ZSH/tools/upgrade.sh > /tmp/log_ohmyzsh_upgrade
 # time to go to sleep
-*/10 23 * * * [[ $(uname) = 'Darwin' ]] && osascript -e 'display notification "Time to go to sleep !!!" with title "Go to sleep"'
-* 0,1,2,3 * * * [[ $(uname) = 'Darwin' ]] && osascript -e 'display notification "Time to go to sleep !!!" with title "Go To sleep"' && say "Sleeping time."
+# */10 23 * * * [[ $(uname) = 'Darwin' ]] && osascript -e 'display notification "Time to go to sleep !!!" with title "Go to sleep"'
+# * 0,1,2,3 * * * [[ $(uname) = 'Darwin' ]] && osascript -e 'display notification "Time to go to sleep !!!" with title "Go To sleep"' && say "Sleeping time."
