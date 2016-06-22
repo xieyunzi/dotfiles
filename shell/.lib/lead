@@ -48,6 +48,12 @@ if [[ -x `which fzf` ]]; then
   source $HOME/.lib/fzf.sh
 fi
 
+# https://github.com/asdf-vm/asdf
+if [[ -e "$HOME/.lib/lead.local" ]]; then
+  source "$HOME/.asdf/asdf.sh"
+  # source "$HOME/.asdf/completions/asdf.bash"
+fi
+
 # load custom profile
 if [[ -e "$HOME/.lib/lead.local" ]]; then . "$HOME/.lib/lead.local"; fi
 

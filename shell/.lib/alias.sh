@@ -7,16 +7,18 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
-alias l="ls -lha"
-alias ll="ls -lh"
-
 ### Colored ls
 if [ -x /usr/bin/dircolors ]; then
   eval "`dircolors -b`"
   alias ls='ls --color=auto'
+  alias l='ls -lha --color=auto'
+  alias ll='ls -lh --color=auto'
+
   alias grep='grep --color=auto'
 elif [ $IS_MAC -eq 1 ]; then
   alias ls='ls -G'
+  alias l='ls -G -lha'
+  alias ll='ls -G -lh'
 fi
 
 alias g=git

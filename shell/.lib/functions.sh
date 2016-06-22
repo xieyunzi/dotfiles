@@ -32,7 +32,10 @@ history_top() {
 
 history_ssh() {
   # history | ag '^\s*\d+\*?\s+ssh\s'
-  fc -l 1 | ag '^\s*\d+\*?\s+ssh\s'
+  fc -l 1 \
+    | ag '^\s*\d+\*?\s+ssh\s' \
+    | python -c 'import os, sys, re; sshs = map(lambda l: re.sub("^[\d\*\s]*", "", l).strip(), sys.stdin.readlines()); print "\n".join(list(set(sshs)))'
+    # | ruby -e 'puts STDIN.readlines.map { |l| l.sub(/^[\d\*\s]*/, "").strip }.uniq'
 }
 
 # }}}
