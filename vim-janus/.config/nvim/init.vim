@@ -1,1 +1,0 @@
-exe 'source ' . expand("~") . '/.vimrc'
