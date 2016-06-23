@@ -7,16 +7,9 @@
 [submodule "emacs/.emacs.d"]
 	path = emacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs
-[submodule "vim-janus/.vim"]
-	path = vim-janus/.vim
-	url = https://github.com/carlhuda/janus.git
-	ignore = dirty
 [submodule "vim/.vim/bundle/Vundle.vim"]
 	path = vim/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "vim-janus/.janus"]
-	path = vim-janus/.janus
-	url = https://github.com/xieyunzi/janus.git
 [submodule "shell/.bin/.third-party/z"]
 	path = shell/.bin/.third-party/z
 	url = https://github.com/rupa/z.git
