@@ -1,0 +1,5 @@
+# three default streams on every program (that are numbered file descriptors)
+
+0. Standard input (where the program normally reads from)
+1. Standard output (where the program normally writes to)
+2. Standard error (where the program normally writes error messages)
