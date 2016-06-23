@@ -33,8 +33,10 @@ Temporary Items
 vim/.vim/_backup
 vim/.vim/_temp
 vim/.vim/.netrwhist
+vim/.config/nvim/.netrwhist
 vim/.vim/bundle/
 vim/.vim/shada/
+vim/.vim/plugged/
 
 # tmux
 tmux/.tmux/plugins/
