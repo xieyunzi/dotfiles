@@ -7,9 +7,6 @@
 [submodule "emacs/.emacs.d"]
 	path = emacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs
-[submodule "vim/.vim/bundle/Vundle.vim"]
-	path = vim/.vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "shell/.bin/.third-party/z"]
 	path = shell/.bin/.third-party/z
 	url = https://github.com/rupa/z.git
