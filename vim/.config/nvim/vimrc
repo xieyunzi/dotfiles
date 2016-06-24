@@ -63,7 +63,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Chiel92/vim-autoformat',      { 'on': '<Plug>Autoformat' }
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Shougo/deoplete.nvim'
-Plug 'editorconfig/editorconfig-vim'
+" Plug 'editorconfig/editorconfig-vim'
 
 " Plug 'SirVer/ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'honza/vim-snippets'
