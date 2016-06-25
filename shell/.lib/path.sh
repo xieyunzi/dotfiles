@@ -17,10 +17,10 @@ fi
 # https://github.com/carsomyr/rbenv-bundler/issues/33
 # https://github.com/rbenv/rbenv
 # https://github.com/rbenv/ruby-build
-if [[ -d "$HOME/.rbenv" ]]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init --no-rehash -)"
-fi
+# if [[ -d "$HOME/.rbenv" ]]; then
+#   export PATH="$HOME/.rbenv/bin:$PATH"
+#   eval "$(rbenv init --no-rehash -)"
+# fi
 
 # pythen, pyenv
 # https://github.com/yyuu/pyenv
