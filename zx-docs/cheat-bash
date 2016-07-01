@@ -3,3 +3,8 @@
 0. Standard input (where the program normally reads from)
 1. Standard output (where the program normally writes to)
 2. Standard error (where the program normally writes error messages)
+
+# ssh socks
+
+    ssh -D 9999 user@yourhost.com
+    sshpass -p password ssh -qTfnN -D 9999 user@yourhost.com

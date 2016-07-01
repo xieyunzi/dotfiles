@@ -15,7 +15,7 @@ alias wget="curl -O"
 alias smysql="/usr/local/bin/mysql.server start"
 
 # # Enable shims and autocompletion for rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # More Git aliases
 alias git='hub'

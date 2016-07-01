@@ -48,7 +48,7 @@ unlet! g:plug_url_format
 
 
 " Colors
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'altercation/vim-colors-solarized'
 
@@ -64,6 +64,23 @@ Plug 'Chiel92/vim-autoformat',      { 'on': '<Plug>Autoformat' }
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Shougo/deoplete.nvim'
 " Plug 'editorconfig/editorconfig-vim'
+
+Plug 'Lokaltog/vim-easymotion'
+map <Leader> <Plug>(easymotion-prefix)
+" <Leader>f{char} to move to {char}
+"map  <Leader>f <Plug>(easymotion-bd-f)
+"nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+" map <Leader>l <Plug>(easymotion-bd-jk)
+" nmap <Leader>l <Plug>(easymotion-overwin-line)
+
+" Move to word
+" map  <Leader>w <Plug>(easymotion-bd-w)
+" nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 " Plug 'SirVer/ultisnips', { 'on': '<Plug>(tab)' }
 " Plug 'honza/vim-snippets'
@@ -455,7 +472,9 @@ nnoremap [b :bprev<cr>
 " Tabs
 " ----------------------------------------------------------------------------
 nnoremap ]t :tabn<cr>
+nnoremap t] :tabn<cr>
 nnoremap [t :tabp<cr>
+nnoremap t[ :tabp<cr>
 
 " ----------------------------------------------------------------------------
 " <tab> / <s-tab> | Circular windows navigation
