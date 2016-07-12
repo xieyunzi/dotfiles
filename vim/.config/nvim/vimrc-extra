@@ -62,3 +62,6 @@ nnoremap <silent> _ <C-W>-<C-W>-<C-W>-
 nnoremap <silent> + <C-W>+<C-W>+<C-W>+
 nnoremap <silent> <M-<> <C-W><<C-W><<C-W><<C-W><<C-W><
 nnoremap <silent> <M->> <C-W>><C-W>><c-w>><c-w>><c-w>>
+
+" http://www.jovicailic.org/2015/05/saving-read-only-files-in-vim-sudo-trick
+cmap w!! w !sudo tee % >/dev/null
