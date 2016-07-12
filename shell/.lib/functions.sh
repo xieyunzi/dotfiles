@@ -21,6 +21,10 @@ open_baidu()  { open_chrome "https://www.baidu.com/s?wd=$1";  }
 alias goo=open_google
 alias bai=open_baidu
 
+du_largest() {
+  du -kx | egrep -v "\./.+/" | sort -n
+}
+
 # history {{{
 
 history_top() {
