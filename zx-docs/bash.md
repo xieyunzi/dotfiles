@@ -82,3 +82,33 @@ with case statement:
     esac
 
 http://stackoverflow.com/questions/229551/string-contains-in-bash/229585#229585
+
+How-to-run-process-as-background-and-never-die
+==============================================
+
+`nohup node server.js > /dev/null 2>&1 &`
+
+ 1. `nohup` means: *Do not terminate this process even when the stty is cut
+    off.*
+ 2. `> /dev/null` means: *stdout goes to /dev/null (which is a dummy
+    device that does not record any output).* 
+ 3. `2>&1` means: *stderr also goes to the stdout (which is already redirected to `/dev/null`). You may replace &1 with a file path to keep a log of errors, e.g.: `2>/tmp/myLog`*
+ 4. `&` at the end means: *run this command as a background task.*
+
+http://stackoverflow.com/questions/4797050/how-to-run-process-as-background-and-never-die
+
+
+How to redirect standard output and error to a file in unix
+===========================================================
+
+That part is written to stderr, use `2>` to redirect it. For example:
+
+    foo > stdout.txt 2> stderr.txt
+
+or if you want in same file:
+
+    foo > allout.txt 2>&1
+
+Note: this works in (ba)sh, check your shell for proper syntax
+
+http://stackoverflow.com/questions/6674327/redirect-all-output-to-file
