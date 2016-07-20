@@ -49,7 +49,7 @@ if [[ -x `which fzf` ]]; then
 fi
 
 # https://github.com/asdf-vm/asdf
-if [[ -e "$HOME/.lib/lead.local" ]]; then
+if [[ -e "$HOME/.asdf/asdf.sh" ]]; then
   source "$HOME/.asdf/asdf.sh"
   # source "$HOME/.asdf/completions/asdf.bash"
 fi
