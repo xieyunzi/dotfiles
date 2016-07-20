@@ -60,7 +60,7 @@ Plug 'tpope/vim-commentary',        { 'on': '<Plug>Commentary' }
 Plug 'mbbill/undotree',             { 'on': 'UndotreeToggle'   }
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Chiel92/vim-autoformat',      { 'on': '<Plug>Autoformat' }
+Plug 'Chiel92/vim-autoformat'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Shougo/deoplete.nvim'
 " Plug 'editorconfig/editorconfig-vim'
