@@ -48,3 +48,5 @@ zx-tmp/*
 
 # ignore file with example
 misc/.proxychains/proxychains.conf
+
+shell/.deliver

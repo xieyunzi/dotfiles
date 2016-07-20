@@ -112,3 +112,24 @@ or if you want in same file:
 Note: this works in (ba)sh, check your shell for proper syntax
 
 http://stackoverflow.com/questions/6674327/redirect-all-output-to-file
+
+One line loop
+=============
+
+Run Command 5 Times
+-------------------
+
+    for i in {1..5}; do COMMAND-HERE; done
+
+or
+
+    for((i=1;i<=10;i+=2)); do echo "Welcome $i times"; done
+
+Work On Files
+-------------
+
+    for i in *; do echo $i; done
+
+OR
+
+    for i in /etc/*.conf; do cp $i /backup; done
