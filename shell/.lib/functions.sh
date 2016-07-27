@@ -103,4 +103,8 @@ cdrr() {
   fi
 }
 
+query_hosts() {
+  cat /etc/hosts | grep $1 | awk '{print $1, $2}'
+}
+
 fi

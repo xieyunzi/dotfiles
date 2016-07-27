@@ -1,3 +1,13 @@
+start docker daemon
+-------------------
+
+    docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &
+
+play with http proxy
+--------------------
+
+    HTTP_PROXY=http://192.168.1.1:3128/ docker pull busybox
+
 get container ip
 ----------------
 
@@ -12,12 +22,12 @@ mac 上同步 host 2 docker-machine
 Remove all stopped containers.
 ------------------------------
 
-  docker rm $(docker ps -a -q)
+    docker rm $(docker ps -a -q)
 
 Remove all untagged images
 --------------------------
 
-  docker rmi $(docker images | grep "^<none>" | awk "{print \$3}")
+    docker rmi $(docker images | grep "^<none>" | awk "{print \$3}")
 
 http://jimhoskins.com/2013/07/27/remove-untagged-docker-images.html
 
