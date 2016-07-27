@@ -33,13 +33,11 @@ if [[ $IS_MAC -eq 1 && -x `which gfind` ]]; then
 elif [[ $IS_LINUX -eq 1 ]]; then
   export GNU_FIND=find
 fi
-if [[ -n $GNU_FIND ]]; then
+if [[ -d $HOME/.bin/.third-party && -n $GNU_FIND ]]; then
   # http://unix.stackexchange.com/questions/17715/how-can-i-set-all-subdirectories-of-a-directory-into-path
   export PATH=$($GNU_FIND $HOME/.bin/.third-party/* -type d -printf "%p:")$PATH
 fi
 export PATH="$HOME/.bin:$PATH"
-
-source "$HOME/.bin/.third-party/z/z.sh"
 
 source $HOME/.lib/path.sh
 source $HOME/.lib/alias.sh

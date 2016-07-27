@@ -50,3 +50,4 @@ zx-tmp/*
 misc/.proxychains/proxychains.conf
 
 shell/.deliver
+shell/.oh-my-zsh
