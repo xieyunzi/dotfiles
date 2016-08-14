@@ -46,6 +46,9 @@ if [[ -x `which fzf` ]]; then
   source $HOME/.lib/fzf.sh
 fi
 
+if [[ -e "$HOME/.lib/z.sh" ]]; then
+  source $HOME/.lib/z.sh
+fi
 # https://github.com/asdf-vm/asdf
 if [[ -e "$HOME/.asdf/asdf.sh" ]]; then
   source "$HOME/.asdf/asdf.sh"

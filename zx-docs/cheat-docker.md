@@ -11,7 +11,19 @@ play with http proxy
 get container ip
 ----------------
 
-    docker inspect -f '{{ .NetworkSettings.IPAddress }}' container-name
+To get all container names and their ips in just one single command.
+
+    docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -aq)
+
+If you are using `docker-compose` the command will be this:
+
+    docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+
+The output will be:
+
+    /containerA - 172.17.0.4
+    /containerB - 172.17.0.3
+    /containerC - 172.17.0.2
 
 mac 上同步 host 2 docker-machine
 -----------------------------

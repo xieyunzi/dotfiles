@@ -1,24 +1,29 @@
-# use proxychains with socks proxy
+use proxychains with socks proxy
+================================
 
-## install proxychains
+install proxychains
+-------------------
 
 - ubuntu/debain: `apt-get install proxychains`
 - mac: `brew install proxychains-ng`
 
-## configure
+configure
+---------
 
-```sh
-$ vi ~/.proxychains/proxychains.conf
-```
+    vi ~/.proxychains/proxychains.conf
 
-## usage
+usage
+-----
 
-```sh
-proxychains4 curl https://www.google.com
-proxychains4 git pull origin master
+    proxychains4 curl https://www.google.com
+    proxychains4 git pull origin master
 
-# or
+or
 
-proxychains4 zsh
-curl git pull origin master
-```
+    proxychains4 zsh
+    git pull origin master
+
+http proxy based on socks proxy
+===============================
+
+polipo socksParentProxy=localhost:1080

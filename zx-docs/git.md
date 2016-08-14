@@ -34,3 +34,27 @@ A `git pull` is what you would do to bring a local branch up-to-date with its re
 Git documentation: [git pull](http://git-scm.com/docs/git-pull)
 
 [ref](http://stackoverflow.com/questions/292357/what-are-the-differences-between-git-pull-and-git-fetch)
+
+How to tell git which private key to use?
+=========================================
+
+ssh has the -i option to tell which private key file to use when authenticating,
+Is there a similar way to tell git which private key file to use on a system with multiple private keys in the ~/.ssh directory?
+
+Answer:
+-------
+
+In `~/.ssh/config`, add:
+
+    host github.com
+     HostName github.com
+     IdentityFile ~/.ssh/id_rsa_github
+     User git
+
+Now you can do `git clone git@github.com:username/repo.git`.
+
+NOTE:  Verify that the permissions on IdentityFile are 400.SSH will reject, in a not clearly explicit manner, SSH keys that are too readable. It will just look like a credential rejection. The solution, in this case, is:
+
+    chmod 400 ~/.ssh/id_rsa_github
+
+[ref](http://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use)

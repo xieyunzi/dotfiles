@@ -103,8 +103,12 @@ cdrr() {
   fi
 }
 
-query_hosts() {
+search_hosts() {
   cat /etc/hosts | grep $1 | awk '{print $1, $2}'
+}
+
+search_docker_image_tags() {
+  curl -s -S -L "https://registry.hub.docker.com//v1/repositories/$@/tags" | jq '.[] | .name' | sort -r
 }
 
 fi

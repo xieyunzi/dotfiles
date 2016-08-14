@@ -1,3 +1,0 @@
-#!/bin/bash
-curl -L $1 -o $2
-# curl -O --retry 999 --retry-max-time 0 -C -
