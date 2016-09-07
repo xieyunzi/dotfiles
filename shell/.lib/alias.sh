@@ -8,20 +8,24 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 ### Colored ls
-if [ -x /usr/bin/dircolors ]; then
+if [[ -x /usr/bin/dircolors ]]; then
   eval "`dircolors -b`"
   alias ls='ls --color=auto'
   alias l='ls -lha --color=auto'
   alias ll='ls -lh --color=auto'
 
   alias grep='grep --color=auto'
-elif [ $IS_MAC -eq 1 ]; then
+elif [[ $IS_MAC -eq 1 ]]; then
   alias ls='ls -G'
   alias l='ls -G -lha'
   alias ll='ls -G -lh'
 fi
 
-alias g=git
+alias ls.='ls -d .*'
+alias l.='l -d .*'
+alias ll.='ll -d .*'
+
+if [[ -x $(which hub) ]]; then alias g=hub; else alias g=git; fi
 alias tm=tmux
 
 # for vim {{{
@@ -46,6 +50,12 @@ alias header='curl -I'
 # find out if remote server supports gzip / mod_deflate or not
 alias headerc='curl -I --compress'
 
+if [[ $IS_LINUX -eq 1 ]]; then
+  alias ports='netstat -tulanp'
+else
+  alias ports='netstat -tulan'
+fi
+
 # wget alias
 # http://www.mymacosx.com/terminal/wget-replacement-macos.html
 # http://superuser.com/questions/142459/persistent-retrying-resuming-downloads-with-curl
@@ -54,12 +64,6 @@ if [[ ! -x `which wget` ]]; then
 fi
 
 # }}}
-
-if [[ $IS_MAC -eq 1 ]]; then
-  alias psqlstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-  alias psqlstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-  # alias psqlstop='pg_ctl stop'
-fi
 
 if [[ $IS_LINUX -eq 1 ]]; then
   # iptables alias for linux
@@ -85,5 +89,8 @@ if [[ $IS_LINUX -eq 1 ]]; then
   alias cpuinfo='lscpu'
   # }}}
 fi
+
+# for ruby
+alias be='bundle exec'
 
 fi

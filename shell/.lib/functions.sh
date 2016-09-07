@@ -92,23 +92,47 @@ cdr() {
 cdrr() {
   local gitinfo
 
-  cd $(git rev-parse --show-toplevel)
+  cdr
 
   cd ..
   gitinfo=$(git status 2>&1)
   if [[ $gitinfo == *"fatal: Not a git repository"* ]]; then
     cd -
   else
-    cd $(git rev-parse --show-toplevel)
+    cdr
   fi
 }
 
 search_hosts() {
-  cat /etc/hosts | grep $1 | awk '{print $1, $2}'
+  # cat /etc/hosts | grep $1 | awk '{print $1, $2}'
+  cat /etc/hosts | grep $1 | ruby -ne 'puts STDIN.read.gsub(/^#.*\n/, "")'
 }
 
 search_docker_image_tags() {
-  curl -s -S -L "https://registry.hub.docker.com//v1/repositories/$@/tags" | jq '.[] | .name' | sort -r
+  curl -sSL "https://registry.hub.docker.com//v1/repositories/$@/tags" | jq '.[] | .name' | sort -r
+}
+
+docker_ip() {
+  local green
+  local nc # no color
+
+  green='\033[0;32m'
+  nc='\033[0m'
+  echo "${green}docker format:${nc}"
+  docker inspect -f '{{.Name}} - {{.NetworkSettings.IPAddress }}' $(docker ps -q)
+  echo "${green}docker-compose format:${nc}"
+  docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -q)
+}
+
+docker_delete_container() {
+  local container_regexp
+  container_regexp=$1
+
+  if [[ -z $container_regexp ]]; then
+    echo 'Need container name regexp.'
+  else
+    docker ps -a | grep $1 | awk '{print $(NF)}' | ruby -pe 'puts `docker rm #{$_}`'
+  fi
 }
 
 fi
