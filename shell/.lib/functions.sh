@@ -135,4 +135,12 @@ docker_delete_container() {
   fi
 }
 
+docker_cleanup_all_stopped_containers() {
+  docker rm $(docker ps -a -q)
+}
+
+docker_cleanup_all_untagged_images() {
+  docker rmi $(docker images | grep "^<none>" | awk "{print \$3}")
+}
+
 fi

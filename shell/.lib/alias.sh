@@ -28,6 +28,10 @@ alias ll.='ll -d .*'
 if [[ -x $(which hub) ]]; then alias g=hub; else alias g=git; fi
 alias tm=tmux
 
+alias dr=docker
+alias drc=docker-compose
+alias drm=docker-machine
+
 # for vim {{{
 
 # use neovim
