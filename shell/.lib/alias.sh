@@ -25,6 +25,9 @@ alias ls.='ls -d .*'
 alias l.='l -d .*'
 alias ll.='ll -d .*'
 
+alias ls-depth='find . -mindepth 2 -maxdepth 2 -type d'
+alias ls-depth-detail='find . -mindepth 2 -maxdepth 2 -type d -exec ls -ld "{}" \;'
+
 if [[ -x $(which hub) ]]; then alias g=hub; else alias g=git; fi
 alias tm=tmux
 

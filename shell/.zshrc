@@ -9,6 +9,10 @@ source $HOME/.zshrc.pre-oh-my-zsh
 
 # add by xyz ---------------------------------------------
 
+# Zsh 5.1+ bracketed paste and tmux command prompt
+# https://github.com/tmux/tmux/issues/223
+if [ -n ${TMUX} ]; then unset zle_bracketed_paste; fi
+
 # for fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
