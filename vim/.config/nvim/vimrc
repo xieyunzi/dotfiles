@@ -1,3 +1,9 @@
+" reference
+" https://github.com/jessfraz/.vim
+
+
+
+
 " vim: set foldmethod=marker foldlevel=0:
 " ============================================================================
 " .vimrc of Junegunn Choi {{{

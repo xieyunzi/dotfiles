@@ -1,0 +1,5 @@
+# Test MySQL credentials from Linux command line?
+
+    mysql -h host -u user -p<whatever> -e"quit"
+
+[from](http://dba.stackexchange.com/questions/23747/test-mysql-credentials-from-linux-command-line)

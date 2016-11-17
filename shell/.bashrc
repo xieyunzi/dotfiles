@@ -18,7 +18,7 @@ fi
 export HISTFILE=~/.bash_history  # ensure history file visibility
 # add this configuration to ~/.bashrc
 export HISTCONTROL=ignorespace   # leading space hides commands from history
-export HISTFILESIZE=100000        # increase history file size (default is 500)
+export HISTFILESIZE=1000000        # increase history file size (default is 500)
 export HISTSIZE=${HISTFILESIZE}  # increase history size (default is 500)
 export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"   # mem/file sync
 

@@ -37,6 +37,7 @@ vim/.config/nvim/.netrwhist
 vim/.vim/bundle/
 vim/.vim/shada/
 vim/.vim/plugged/
+vim/.config/nvim/autoload/plug.vim.old
 
 # tmux
 tmux/.tmux/plugins/
