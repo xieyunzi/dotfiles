@@ -5,6 +5,9 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore ".git" -g ""'
 export FZF_DEFAULT_OPTS="--reverse --inline-info"
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+
 export FZF_TMUX_HEIGHT=20
 
 fag(){
@@ -261,4 +264,23 @@ z() {
 
 zz() {
   cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q $_last_z_args)"
+}
+
+# http://junegunn.kr/2016/07/fzf-git/
+# Will return non-zero status if the current directory is not managed by git
+is_in_git_repo() {
+  git rev-parse HEAD > /dev/null 2>&1
+}
+
+gt() {
+  # "Nothing to see here, move along"
+  is_in_git_repo || return
+
+  # Pass the list of the tags to fzf-tmux
+  # - "{}" in preview option is the placeholder for the highlighted entry
+  # - Preview window can display ANSI colors, so we enable --color=always
+  # - We can terminate `git show` once we have $LINES lines
+  git tag --sort -version:refname |
+    fzf-tmux --multi --preview-window right:70% \
+             --preview 'git show --color=always {} | head -'$LINES
 }

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 if [[ ! $DOT_SHELL_LIB_CHECKS -eq 1 ]]; then
 DOT_SHELL_LIB_CHECKS=1
 

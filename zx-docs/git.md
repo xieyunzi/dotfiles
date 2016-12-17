@@ -58,3 +58,10 @@ NOTE:  Verify that the permissions on IdentityFile are 400.SSH will reject, in a
     chmod 400 ~/.ssh/id_rsa_github
 
 [ref](http://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use)
+
+How to complete a git clone for a big project on an unstable connection?
+========================================================================
+
+Use shallow clone i.e. git clone --depth=1, then deepen this clone using git fetch --depth=N, with increasing N. You can use git fetch --unshallow (since 1.8.0.3) to download all remaining revisions.
+
+[ref](http://stackoverflow.com/questions/3954852/how-to-complete-a-git-clone-for-a-big-project-on-an-unstable-connection)
