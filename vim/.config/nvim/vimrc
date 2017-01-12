@@ -70,6 +70,8 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Shougo/deoplete.nvim'
 " Plug 'editorconfig/editorconfig-vim'
+" https://github.com/terryma/vim-multiple-cursors
+Plug 'terryma/vim-multiple-cursors'
 
 Plug 'Lokaltog/vim-easymotion'
 map <Leader> <Plug>(easymotion-prefix)
