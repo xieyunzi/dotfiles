@@ -263,8 +263,11 @@ z() {
 }
 
 zz() {
-  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q $_last_z_args)"
+  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
 }
+
+alias j=z
+alias jj=zz
 
 # http://junegunn.kr/2016/07/fzf-git/
 # Will return non-zero status if the current directory is not managed by git

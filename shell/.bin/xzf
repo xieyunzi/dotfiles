@@ -1,0 +1,11 @@
+#!/bin/bash
+# git repo dirs help
+
+param=$1
+[[ -z "$param" ]] && param=dir 
+
+case "$param" in
+  dir) find . -maxdepth 2 -type d  | fzf ;;
+  md) find . -maxdepth 3 -type f -name '*.md' -or -name '*.MD' -or -name '*.markdown' | fzf ;;
+  readme) find . -maxdepth 3 -type f -name 'readme*' -or -name 'README*' | fzf ;;
+esac
