@@ -100,4 +100,14 @@ fi
 # for ruby
 alias be='bundle exec'
 
+# move file to trash avoid panic
+if [[ -x `which rmtrash` ]]; then
+  alias rm="rmtrash"
+else
+  move_to_trash() {
+    [[ -d ~/.trash ]] || mkdir -p ~/.trash
+    mv "$@" ~/.trash
+  }
+fi
+
 fi
