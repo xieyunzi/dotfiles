@@ -102,12 +102,14 @@ alias be='bundle exec'
 
 # move file to trash avoid panic
 if [[ -x `which rmtrash` ]]; then
-  alias rm="rmtrash"
+  alias del="rmtrash"
+  alias de=del
 else
   move_to_trash() {
     [[ -d ~/.trash ]] || mkdir -p ~/.trash
     mv "$@" ~/.trash
   }
+  alias del=move_to_trash
 fi
 
 fi
