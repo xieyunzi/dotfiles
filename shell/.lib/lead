@@ -24,6 +24,7 @@ if [[ $HAS_NVIM -eq 1 ]]; then
 else
   export EDITOR=vim
 fi
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # dotfiles custom bin file

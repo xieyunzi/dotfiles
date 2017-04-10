@@ -115,6 +115,11 @@ fi
 # for ruby
 alias be='bundle exec'
 
+# python {{{
+alias py=python
+alias py3=python3
+# }}}
+
 # move file to trash avoid panic
 if [[ -x `which rmtrash` ]]; then
   alias del="rmtrash"
@@ -122,9 +127,16 @@ if [[ -x `which rmtrash` ]]; then
 else
   move_to_trash() {
     [[ -d ~/.trash ]] || mkdir -p ~/.trash
-    mv "$@" ~/.trash
+
+    TIMENOW=$(date +%F-%H-%M-%S)
+    [[ -d ~/.trach/bak.$TIMENOW ]] || mkdir -p ~/.trash/bak.$TIMENOW
+    mv "$@" ~/.trash/bak.$TIMENOW
   }
   alias del=move_to_trash
 fi
+
+# command line twitter client
+# https://github.com/mattn/twty
+alias tt='HTTP_PROXY=localhost:8123 twty'
 
 fi

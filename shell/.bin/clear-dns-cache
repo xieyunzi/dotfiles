@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo '
+}}} for mac:
+https://beebom.com/how-reset-and-flush-dns-cache-macos-sierra
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+
+}}} for linux:
+sudo service nscd restart
+'

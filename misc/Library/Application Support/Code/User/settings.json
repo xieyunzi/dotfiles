@@ -1,0 +1,8 @@
+{
+    "[cpp]": {
+        "editor.quickSuggestions": false
+    },
+    "[c]": {
+        "editor.quickSuggestions": true
+    }
+}

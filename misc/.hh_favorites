@@ -1,5 +1,0 @@
-history | sed -e 's/ *[0-9][0-9]* *//' | sort | uniq -c | sort -rn | head -30
-pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
-pg_ctl -D /usr/local/var/postgres stop -s -m fast
-pg_restore -i -h localhost -p 5432 -U reiner -d gogovan_development -v ../latest-cn-2015-11-11.dump
-dropdb 'gogovan_development' && createdb 'gogovan_development'

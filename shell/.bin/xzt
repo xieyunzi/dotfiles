@@ -1,0 +1,22 @@
+#!/bin/sh
+
+help() {
+  echo 'Usage: xzt <command>'
+  echo
+  echo 'commands:'
+  echo
+  echo '  tmlines'
+  echo '  help'
+  echo
+}
+
+params=$1
+
+case $params in
+  tmlines)
+    ruby -e 'puts %x(tmux list-panes -a).split("\n").map { |l| l.scan(/(.*):.*,\s(\d+)\sbytes/).first }.sort_by { |p| p.last.to_i }.map { |p| p[0].ljust(20) + p[1] }'
+    ;;
+  -h | help | *)
+    help
+    ;;
+esac

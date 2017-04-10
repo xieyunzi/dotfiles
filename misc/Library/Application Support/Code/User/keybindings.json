@@ -1,0 +1,5 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+{ "key": "ctrl+]",                   "command": "editor.action.goToDeclaration",
+                                     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor" }
+]
