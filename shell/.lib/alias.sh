@@ -118,6 +118,8 @@ alias be='bundle exec'
 # python {{{
 alias py=python
 alias py3=python3
+
+alias delete-pyc='find . -name \*.pyc -delete'
 # }}}
 
 # move file to trash avoid panic
