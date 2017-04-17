@@ -60,6 +60,10 @@ else
 fi
 alias vi2="v -O2 "
 # }}}
+# for emacs {{{
+alias e=emacs
+# }}}
+
 
 alias rl_sqlite3="rlwrap -a -A sqlite3"
 alias rl_iex="rlwrap -a -A iex"
