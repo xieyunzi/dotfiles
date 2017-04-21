@@ -1,7 +1,11 @@
 if [[ ! $DOT_SHELL_LIB_FUNCTIONS -eq 1 ]]; then
 DOT_SHELL_LIB_FUNCTIONS=1
 
-du_sort() {
+find-delete-with-extension() {
+  find . -name "*.$1" -type f -exec rm -- {} +
+}
+
+du-sort() {
   if [[ $IS_LINUX -eq 1 ]]; then
     du -h -d 1 $1 | sort -h
   elif [[ -x `which gsort` ]]; then
@@ -21,20 +25,20 @@ open_baidu()  { open_chrome "https://www.baidu.com/s?wd=$1";  }
 alias goo=open_google
 alias bai=open_baidu
 
-du_largest() {
+du-largest() {
   du -kx | egrep -v "\./.+/" | sort -n
 }
 
 # history {{{
 
-history_top() {
+history-top() {
   fc -l 1 \
     | awk '{CMD[$2]++;count++;} END { for(a in CMD) {print CMD[a] " " CMD[a]/count*100 "% " a} }' \
     | grep -v "./" \
     | column -c3 -s " " -t | sort -nr | nl |  head -n20
 }
 
-history_ssh() {
+history-ssh() {
   # history | ag '^\s*\d+\*?\s+ssh\s'
   fc -l 1 \
     | ag '^\s*\d+\*?\s+ssh\s' \
@@ -87,7 +91,7 @@ gittgz() {
 
 # back to git project root directory
 cdr() {
-  cd $(git rev-parse --show-toplevel)
+  [[ $(git rev-parse --is-inside-work-tree) == true ]] && cd $(git rev-parse --show-toplevel)
 }
 cdrr() {
   local gitinfo

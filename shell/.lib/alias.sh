@@ -145,4 +145,9 @@ fi
 # https://github.com/mattn/twty
 alias tt='HTTP_PROXY=localhost:8123 twty'
 
+if [[ $IS_MAC -eq 1 ]]; then
+  # highlight today for macos cal
+  alias cal='cal | grep -w -A4 -B6 $(date +%d)'
+fi
+
 fi

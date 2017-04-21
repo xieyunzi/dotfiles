@@ -56,7 +56,7 @@ ZSH_THEME="xieyunzi"
 
 # https://cirw.in/blog/bracketed-paste
 # https://github.com/robbyrussell/oh-my-zsh/pull/1698
-plugins=(docker docker-compose colored-man-pages gradle)
+plugins=(colored-man-pages docker pip)
 
 # User configuration
 
