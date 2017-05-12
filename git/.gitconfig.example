@@ -16,6 +16,8 @@
   windowMemory = 2047m
 [http]
   postBuffer = 2047m
+[https]
+	postBuffer = 2047m
 [alias]
   d    = diff
   cl   = clone
