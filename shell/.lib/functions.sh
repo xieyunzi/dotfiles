@@ -1,6 +1,10 @@
 if [[ ! $DOT_SHELL_LIB_FUNCTIONS -eq 1 ]]; then
 DOT_SHELL_LIB_FUNCTIONS=1
 
+uuid-remove-dashes() {
+  echo ${$(uuid)//-/}
+}
+
 find-delete-with-extension() {
   find . -name "*.$1" -type f -exec rm -- {} +
 }
