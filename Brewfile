@@ -1,5 +1,14 @@
+###
+#
 # https://github.com/Homebrew/homebrew-bundle
 # https://github.com/mas-cli/mas
+#
+### applications
+#
+# https://github.com/karan/joe
+# https://github.com/banbanchs/pan-baidu-download
+#
+###
 
 tap 'caskroom/cask'
 tap 'getantibody/antibody'
