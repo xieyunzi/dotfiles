@@ -159,6 +159,9 @@ Plug 'elzr/vim-json',        { 'for': 'json' }
 " Lint
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 
+" Font 
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 endif
 
