@@ -116,6 +116,11 @@ search_hosts() {
   cat /etc/hosts | grep $1 | ruby -ne 'puts STDIN.read.gsub(/^#.*\n/, "")'
 }
 
+# https://github.com/tonsky/AnyBar
+function anybar {
+  echo -n $1 | nc -4u -w0 localhost ${2:-1738};
+}
+
 search_docker_image_tags() {
   curl -sSL "https://registry.hub.docker.com//v1/repositories/$@/tags" | jq '.[] | .name' | sort -r
 }
