@@ -1,0 +1,24 @@
+#!/bin/bash
+
+tm_sessions=$(ruby -e 'puts `tmux list-sessions | cut -d ":" -f 1`.split.map { |n| "\"#{n}\"" }.sort.join(", ")')
+echo "[INFO] tmux sessions: ${tm_sessions}"
+
+osascript << END
+tell application "iTerm2"
+  activate
+
+  tell current window
+    repeat with tm_session in {${tm_sessions}}
+      create tab with default profile
+
+      tell the last tab
+        tell the last session
+          set cmd to "tmux attach -t " & tm_session
+          write text cmd
+        end tell
+      end tell
+    end repeat
+
+  end tell
+end tell
+END
