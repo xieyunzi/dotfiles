@@ -1,6 +1,11 @@
 #!/bin/bash
 
-tm_sessions=$(ruby -e 'puts `tmux list-sessions | cut -d ":" -f 1`.split.map { |n| "\"#{n}\"" }.sort.join(", ")')
+[[ $(tmux has-session) ]] || \
+  echo 'Waiting tmux server started. 15s' &&\
+  $(tmux new-session -d -s tmp-session-for-start) &&\
+  sleep 15
+
+tm_sessions=$(ruby -e 'print `tmux list-sessions | cut -d ":" -f 1`.split.reject { |n| n == "tmp-session-for-start" }.map { |n| "\"#{n}\"" }.sort.join(", ")')
 echo "[INFO] tmux sessions: ${tm_sessions}"
 
 osascript << END
@@ -22,3 +27,5 @@ tell application "iTerm2"
   end tell
 end tell
 END
+
+tmux kill-session -t tmp-session-for-start
