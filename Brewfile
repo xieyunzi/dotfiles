@@ -19,7 +19,6 @@ tap "homebrew/dupes"
 tap "homebrew/python"
 tap "homebrew/science"
 tap "homebrew/services"
-tap "homebrew/versions"
 cask "xquartz"
 brew "openssl"
 brew "sqlite"
@@ -76,7 +75,6 @@ brew "emacs"
 brew "extract_url"
 brew "fdupes"
 brew "lame"
-brew "x264"
 brew "xvid"
 brew "ffmpeg"
 brew "findutils"
@@ -203,6 +201,7 @@ cask "mplayerx"
 cask "pycharm-ce"
 cask "robomongo"
 cask "spectacle"
+cask "the-unarchiver"
 cask "torbrowser"
 cask "tunnelblick"
 cask "vagrant"
@@ -215,6 +214,5 @@ mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "QQ", id: 451108668
-mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
 mas "有道词典", id: 491854842
