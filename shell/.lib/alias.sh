@@ -62,6 +62,9 @@ alias vi2="v -O2 "
 # }}}
 # for emacs {{{
 alias e=emacs
+alias emacsd="emacs --daemon"
+alias ec="emacsclient -c"
+alias emacsdkill="emacsclient -e '(kill-emacs)'"
 # }}}
 
 
