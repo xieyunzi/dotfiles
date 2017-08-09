@@ -42,6 +42,13 @@ history-top() {
     | column -c3 -s " " -t | sort -nr | nl |  head -n20
 }
 
+history-top-100() {
+  fc -l 1 \
+    | awk '{CMD[$2]++;count++;} END { for(a in CMD) {print CMD[a] " " CMD[a]/count*100 "% " a} }' \
+    | grep -v "./" \
+    | column -c3 -s " " -t | sort -nr | nl |  head -n100
+}
+
 history-ssh() {
   # history | ag '^\s*\d+\*?\s+ssh\s'
   fc -l 1 \
