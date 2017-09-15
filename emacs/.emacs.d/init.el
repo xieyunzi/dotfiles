@@ -27,7 +27,8 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company find-file-in-project ag helm-projectile projectile helm-ag evil-leader helm powerline neotree evil evil-tutor cider slime))))
+    (graphql-mode magit evil-cleverparens which-key ## async inf-ruby clojure-mode multiple-cursors go-mode smex web-mode expand-region clj-refactor robe yaml-mode company find-file-in-project ag helm-projectile projectile helm-ag evil-leader helm powerline neotree evil evil-tutor cider slime))))
+;; smartparens
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -70,9 +71,6 @@
 ; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
 (setq ad-redefinition-action 'accept)
 ;; }}}
-
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
-(setq slime-contribs '(slime-fancy))
 
 (require 'init-entire)
 (require 'navigate)
