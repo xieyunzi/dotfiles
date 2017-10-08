@@ -12,8 +12,6 @@
 ###
 
 tap "caskroom/cask"
-tap "caskroom/fonts"
-tap "getantibody/antibody"
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/dupes"
@@ -183,12 +181,8 @@ brew "wxmac"
 brew "youtube-dl"
 brew "z"
 brew "zsh"
-brew "getantibody/antibody/antibody"
-brew "homebrew/science/opencv"
 cask "anybar"
 cask "atom"
-cask "brave"
-cask "firefox"
 cask "font-hack"
 cask "genymotion"
 cask "google-drive"
@@ -209,7 +203,6 @@ cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
 cask "squirrel"
-mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "iPhoto", id: 408981381
 mas "Keynote", id: 409183694

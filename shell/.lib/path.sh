@@ -44,15 +44,14 @@ fi
 if [[ -n $HEROKU_HOME ]]; then export PATH="$HEROKU_HOME/bin:$PATH"; fi
 
 # java
-# var: JAVA_HOME
+if [[ -d $HOME/.sdkman ]]; then
+  export SDKMAN_DIR="$HOME/.sdkman"
+  source $HOME/.sdkman/bin/sdkman-init.sh
+fi
 if [[ -n $JAVA_HOME ]]; then
   export JAVA_BIN="$JAVA_HOME/bin"
   export CLASSPATH=".:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar"
   export PATH="$JAVA_HOME/bin:$PATH"
-
-  # if [[ -d $HOME/.sdkman ]]; then
-  #   source $HOME/.sdkman/bin/sdkman-init.sh
-  # fi
 fi
 
 # android
