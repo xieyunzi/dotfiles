@@ -5,6 +5,7 @@
 #
 ### applications
 #
+# https://github.com/yujitach/MenuMeters
 # https://github.com/karan/joe
 # https://github.com/banbanchs/pan-baidu-download
 #
@@ -207,6 +208,7 @@ cask "tunnelblick"
 cask "vagrant"
 cask "virtualbox"
 cask "visual-studio-code"
+cask "squirrel"
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "iPhoto", id: 408981381
