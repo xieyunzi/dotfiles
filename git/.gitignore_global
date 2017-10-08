@@ -17,3 +17,10 @@ tags-ja
 
 nohup.out
 .vscode
+
+#intellij idea
+*.iml
+
+# clojure
+.lein-repl-history
+.nrepl-port

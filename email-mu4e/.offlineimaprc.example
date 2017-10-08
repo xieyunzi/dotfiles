@@ -1,0 +1,40 @@
+# https://github.com/OfflineIMAP/offlineimap/blob/master/offlineimap.conf
+# gmail oauth2
+# https://hobo.house/2017/07/17/using-offlineimap-with-the-gmail-imap-api/
+# https://github.com/google/gmail-oauth2-tools
+
+[general]
+ui=TTYUI
+accounts = Gmail
+autorefresh = 5
+
+[Account Gmail]
+proxy = SOCKS5:127.0.0.1:1080
+authproxy = SOCKS5:127.0.0.1:1080
+localrepository = GmailLocal
+remoterepository = GmailRemote
+
+[Repository GmailLocal]
+type = Maildir
+localfolders = ~/.mail/email@example.com
+
+[Repository GmailRemote]
+type = Gmail
+realdelete = no
+ssl = yes
+cert_fingerprint = 3a6bb66979716b6999fe4644744c2c2d3ea71a96
+
+# remotehost = imap.gmail.com
+remoteuser = <email@example.com>
+
+auth_mechanisms = XOAUTH2
+oauth2_client_id = <oauth2_client_id>
+oauth2_client_secret = <oauth2_client_secret>
+oauth2_request_url = https://accounts.google.com/o/oauth2/token
+oauth2_refresh_token = <oauth2_refresh_token>
+
+maxconnections = 1
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+                                             '[Gmail]/Spam',
+                                             '[Gmail]/All Mail',
+                                             ]

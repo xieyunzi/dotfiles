@@ -160,10 +160,10 @@
   (setq inferior-lisp-program "/usr/local/bin/sbcl")
   (setq slime-contribs '(slime-fancy)))
 
-(use-package powerline
-  :ensure t
-  :config
-  (powerline-default-theme))
+;(use-package powerline
+;  :ensure t
+;  :config
+;  (powerline-default-theme))
 
 (use-package robe
   :ensure t
@@ -187,5 +187,12 @@
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
+
+(use-package git-gutter
+  :ensure t
+  :config
+  (global-git-gutter-mode +1)
+  (custom-set-variables
+   '(git-gutter:update-interval 5)))
 
 (provide 'init-entire)
