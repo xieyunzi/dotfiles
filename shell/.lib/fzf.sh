@@ -1,7 +1,7 @@
 # https://github.com/junegunn/fzf
 # https://github.com/junegunn/dotfiles/blob/master/bashrc
 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore ".git" -g ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --files'
 export FZF_DEFAULT_OPTS="--reverse --inline-info"
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -10,16 +10,23 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 export FZF_TMUX_HEIGHT=20
 
-fag(){
+frg(){
   local line
-  line=`ag --nocolor "$1" | fzf` \
-    && $EDITOR $(cut -d':' -f1 <<< "$line") +$(cut -d':' -f2 <<< "$line")
+  line=`rg --line-number --hidden "$1" | fzf`
+  [ -n "$line" ] && $EDITOR $(cut -d':' -f1 <<< "$line") +$(cut -d':' -f2 <<< "$line")
 }
+
+alias fag=frg
 
 # fd - cd to selected directory
 fd() {
   DIR=`find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf-tmux` \
     && cd "$DIR"
+}
+ff() {
+  local file
+  file=`rg --files | fzf`
+  [ -n "$file" ] && ${EDITOR:-vim} "$file"
 }
 
 # fda - including hidden directories
