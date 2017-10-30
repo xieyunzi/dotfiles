@@ -18,20 +18,20 @@ frg(){
 
 alias fag=frg
 
-# fd - cd to selected directory
-fd() {
-  DIR=`find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf-tmux` \
-    && cd "$DIR"
-}
 ff() {
   local file
   file=`rg --files | fzf`
   [ -n "$file" ] && ${EDITOR:-vim} "$file"
 }
 
-# fda - including hidden directories
-fda() {
-  DIR=`find ${1:-.} -type d 2> /dev/null | fzf-tmux` && cd "$DIR"
+# ffd - cd to selected directory
+ffd() {
+  DIR=`fd -t d | fzf-tmux` && cd "$DIR"
+}
+
+# ffda - including hidden directories
+ffda() {
+  DIR=`fd -t d -H | fzf-tmux` && cd "$DIR"
 }
 
 # git {{{
