@@ -1,6 +1,11 @@
 if [[ ! $DOT_SHELL_LIB_PATH_MACOSX -eq 1 ]]; then
 DOT_SHELL_LIB_PATH_MACOSX=1
 
+# curl
+if [[ -d /usr/local/opt/curl/bin ]]; then
+  export PATH="/usr/local/opt/curl/bin:$PATH"
+fi
+
 # nvm, lasy load nvm, because it's slow
 # https://github.com/creationix/nvm/issues/539
 export NVM_DIR="$HOME/.nvm"
