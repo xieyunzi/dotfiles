@@ -44,21 +44,21 @@ source $HOME/.lib/path.sh
 source $HOME/.lib/alias.sh
 source $HOME/.lib/functions.sh
 
-if [[ -e "$HOME/.lib/z.sh" ]]; then
-  source $HOME/.lib/z.sh
-fi
-if [[ -x `which fzf` ]]; then
-  source $HOME/.lib/fzf.sh
-fi
+[[ -e "$HOME/.lib/z.sh" ]] && \
+  source "$HOME/.lib/z.sh"
+[[ -e "/usr/local/etc/profile.d/z.sh" ]] && \
+  source "/usr/local/etc/profile.d/z.sh"
+[[ -x `which fzf` ]] && \
+  source "$HOME/.lib/fzf.sh"
+
 # https://github.com/asdf-vm/asdf
 if [[ -e "$HOME/.asdf/asdf.sh" ]]; then
   source "$HOME/.asdf/asdf.sh"
   # source "$HOME/.asdf/completions/asdf.bash"
 fi
-# deliver
-if [[ -e "$HOME/.deliver/bin/deliver" ]]; then export PATH="${PATH}:$HOME/.deliver/bin"; fi
 
 # load custom profile
-if [[ -e "$HOME/.lib/lead.local" ]]; then . "$HOME/.lib/lead.local"; fi
+[[ -e "$HOME/.lib/lead.local" ]] && \
+  source "$HOME/.lib/lead.local"
 
 fi
