@@ -126,7 +126,7 @@ endif
 " Lang
 if v:version >= 703
   Plug 'vim-ruby/vim-ruby'
-  Plug 'kovisoft/paredit',    { 'for': 'clojure' }
+  " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
   Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
   Plug 'guns/vim-clojure-static'
   Plug 'guns/vim-clojure-highlight'
@@ -155,6 +155,7 @@ Plug 'jimenezrick/vimerl',   { 'for': 'erlang' }
 Plug 'skwp/vim-rspec',       { 'for': 'ruby' }
 Plug 'wlangstroth/vim-haskell', { 'for': 'haskell' }
 Plug 'elzr/vim-json',        { 'for': 'json' }
+Plug 'python-mode/python-mode', { 'for': 'python' }
 
 " Lint
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
