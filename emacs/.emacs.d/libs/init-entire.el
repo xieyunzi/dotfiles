@@ -14,7 +14,12 @@
   (setq evil-leader/in-all-states 1)
   (evil-leader/set-key
     "m"  'neotree-toggle
-    "n"  'neotree-project-dir
+    ;; "n"  'neotree-project-dir
+    ;; "nn" 'evil-mc-make-all-cursors
+    ;; "nu" 'evil-mc-undo-all-cursors
+    ; "nm" 'evil-mc-make-cursor-here
+    ; "np" 'evil-mc-pause-cursors
+    ; "nr" 'evil-mc-resume-cursors
     "."  'switch-to-previous-buffer
     "/"  'evil-search-highlight-persist-remove-all
     "h"  'help-map
@@ -102,9 +107,9 @@
   :ensure t
   :config
 
-    (evil-leader/set-key
-      "m"  'neotree-toggle
-      "n"  'neotree-project-dir)
+    ; (evil-leader/set-key
+    ;   "m"  'neotree-toggle
+    ;   "n"  'neotree-project-dir)
 
   (setq projectile-switch-project-action 'neotree-projectile-action)
   (add-hook 'neotree-mode-hook
@@ -194,5 +199,15 @@
   (global-git-gutter-mode +1)
   (custom-set-variables
    '(git-gutter:update-interval 5)))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+
+(use-package evil-mc
+  :ensure t
+  :config
+  (setq global-evil-mc-mode 1))
 
 (provide 'init-entire)
