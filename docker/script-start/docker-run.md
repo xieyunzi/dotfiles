@@ -42,3 +42,9 @@ docker run -d -p 49998:80 owasp-bricks
 ```bash
 docker run --rm -it -p 8888:80 webgoat2 java -jar /webgoat.jar  -httpPort 80
 ```
+
+## imagemagick
+
+```bash
+docker run -v $PWD:/images -w /images --rm -it v4tech/imagemagick /bin/sh
+```

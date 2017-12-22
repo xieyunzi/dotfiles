@@ -137,12 +137,15 @@
   :ensure t)
 
 (use-package helm-projectile
+  :ensure t
+  :config
+  (helm-projectile-on)
+  (projectile-global-mode)
   :bind (("C-S-P" . helm-projectile-switch-project)
          :map evil-normal-state-map
          ("C-p" . helm-projectile))
-  :after (helm projectile evil)
-  :commands (helm-projectile helm-projectile-switch-project)
-  :ensure t)
+  ;:after (helm projectile evil)
+  :commands (helm-projectile helm-projectile-switch-project))
 
 (use-package company
   :ensure t
