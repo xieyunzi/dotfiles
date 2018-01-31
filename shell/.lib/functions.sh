@@ -12,7 +12,7 @@ find-delete-with-extension() {
 du-sort() {
   if [[ $IS_LINUX -eq 1 ]]; then
     du -h -d 1 $1 | sort -h
-  elif [[ -x `which gsort` ]]; then
+  elif [[ -x `which gsort` ]] >/dev/null 2>&1; then
     du -h -d 1 $1 | gsort -h
   else
     echo "Please install coreutils to use sort."

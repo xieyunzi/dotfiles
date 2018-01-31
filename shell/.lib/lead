@@ -29,7 +29,7 @@ export LANG=en_US.UTF-8
 
 # dotfiles custom bin file
 # `brew install libtool` for mac first
-if [[ $IS_MAC -eq 1 && -x `which gfind` ]]; then
+if [[ $IS_MAC -eq 1 && -x `which gfind` ]] >/dev/null 2>&1; then
   export GNU_FIND=gfind
 elif [[ $IS_LINUX -eq 1 ]]; then
   export GNU_FIND=find
@@ -48,7 +48,7 @@ source $HOME/.lib/functions.sh
   source "$HOME/.lib/z.sh"
 [[ -e "/usr/local/etc/profile.d/z.sh" ]] && \
   source "/usr/local/etc/profile.d/z.sh"
-[[ -x `which fzf` ]] && \
+[[ -x `which fzf` ]] >/dev/null 2>&1 && \
   source "$HOME/.lib/fzf.sh"
 
 # https://github.com/asdf-vm/asdf

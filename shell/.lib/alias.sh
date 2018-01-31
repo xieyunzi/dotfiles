@@ -28,7 +28,7 @@ alias ll.='ll -d .*'
 alias ls-depth='find . -mindepth 2 -maxdepth 2 -type d'
 alias ls-depth-detail='find . -mindepth 2 -maxdepth 2 -type d -exec ls -ld "{}" \;'
 
-if [[ -x $(which hub) ]]; then alias g=hub; else alias g=git; fi
+if [[ -x `which hub` ]] >/dev/null 2>&1; then alias g=hub; else alias g=git; fi
 alias tm=tmux
 
 # for docker {{{
@@ -88,7 +88,7 @@ fi
 # wget alias
 # http://www.mymacosx.com/terminal/wget-replacement-macos.html
 # http://superuser.com/questions/142459/persistent-retrying-resuming-downloads-with-curl
-if [[ ! -x `which wget` ]]; then
+if [[ ! -x `which wget` ]] >/dev/null 2>&1; then
   alias wget="curl -O --retry 999 --retry-max-time 0 -C -"
 fi
 
@@ -130,7 +130,7 @@ alias delete-pyc='find . -name \*.pyc -delete'
 # }}}
 
 # move file to trash avoid panic
-if [[ -x `which rmtrash` ]]; then
+if [[ -x `which rmtrash` ]] >/dev/null 2>&1; then
   alias del="rmtrash"
   alias de=del
 else
