@@ -31,6 +31,15 @@ fi
 # haskell
 export HASKELL_HOME="$HOME/Library/Haskell"
 
+# openssl
+if [[ -e /usr/local/opt/openssl ]]; then
+  export PATH="/usr/local/opt/openssl/bin:$PATH"
+fi
+# libressl
+if [[ -e /usr/local/opt/libressl ]]; then
+  export PATH="/usr/local/opt/libressl/bin:$PATH"
+fi
+
 if [[ -e "$HOME/.lib/path.macosx.local" ]]; then . "$HOME/.lib/path.macosx.local"; fi
 
 fi
