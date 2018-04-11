@@ -28,6 +28,11 @@ elif [[ -e "$HOME/Library/Android/sdk" ]]; then
   export ANDROID_HOME=$HOME/Library/Android/sdk
 fi
 
+# postgres libpq
+if [[ -d /usr/local/opt/libpq/bin ]]; then
+  export PATH="/usr/local/opt/libpq/bin:$PATH"
+fi
+
 # haskell
 export HASKELL_HOME="$HOME/Library/Haskell"
 

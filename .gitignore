@@ -39,6 +39,9 @@ vim/.vim/shada/
 vim/.vim/plugged/
 vim/.config/nvim/autoload/plug.vim.old
 
+# emacs file
+emacs/.emacs.d/projectile.cache
+
 # tmux
 tmux/.tmux/plugins/
 tmux/.tmux/resurrect
