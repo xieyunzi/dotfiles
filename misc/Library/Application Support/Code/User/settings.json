@@ -4,5 +4,13 @@
     },
     "[c]": {
         "editor.quickSuggestions": true
-    }
+    },
+    "vim.disableAnnoyingNeovimMessage": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontSize": 15,
+    "workbench.colorTheme": "Solarized Dark",
+    "javascript.validate.enable": false,
+    "go.docsTool": "gogetdoc",
+    "http.proxy": "http://localhost:8123",
+    "window.zoomLevel": 0
 }
