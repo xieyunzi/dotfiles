@@ -1,0 +1,57 @@
+- [browser apis](https://developer.mozilla.org/en-US/docs/Web/API)
+  - http
+    - body
+      - [window](https://developer.mozilla.org/en-US/docs/Web/API/Window)
+        - dom
+          - node, element
+          - event
+            - input event
+            - close event
+            - focus event
+            - keyboard
+            - mouse
+               - scroll
+               - wheel
+            - touch
+            - ...
+          - css
+    - header
+      - cookie
+      - url
+  - history
+  - [navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator)
+    - hardware
+      - battery
+      - mediaDevices.enumerateDevices
+        - audio
+        - video
+    - settings or info
+      - appName, appCodeName, appVersion
+      - languages
+      - platform
+      - userAgent
+      - deviceMemory
+      - hardwareConcurrency
+      - cookieEnable
+      - doNotTrack
+      - vendor
+      - ...
+  - multimedia and binary-data
+    - WebGL
+    - SVG
+    - canvas
+    - [image (img, svg, image, video, canvas)](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/createImageBitmap)
+    - [blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
+    - [file](https://developer.mozilla.org/en-US/docs/Web/API/File)
+  - [storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage)
+    - [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+    - sessionStorage
+    - localStorage
+    - cacheStorage
+  - [web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)
+  - connections
+    - XMLHttpRequest
+    - websocket
+    - webrtc
+  - debug
+    - console
