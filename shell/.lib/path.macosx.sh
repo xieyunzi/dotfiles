@@ -5,6 +5,10 @@ DOT_SHELL_LIB_PATH_MACOSX=1
 if [[ -d /usr/local/opt/curl/bin ]]; then
   export PATH="/usr/local/opt/curl/bin:$PATH"
 fi
+# sqlite
+if [[ -d /usr/local/opt/sqlite/bin ]]; then
+  export PATH="/usr/local/opt/sqlite/bin:$PATH"
+fi
 
 # nvm, lasy load nvm, because it's slow
 # https://github.com/creationix/nvm/issues/539
@@ -13,7 +17,17 @@ NVM_SOURCE=/usr/local/opt/nvm/nvm.sh
 lazy_source nvm $NVM_SOURCE
 
 # golang
-export GOROOT=/usr/local/opt/go/libexec
+if [[ -d /usr/local/opt/go/libexec ]]; then
+  export GOROOT=/usr/local/opt/go/libexec
+fi
+
+# python
+if [[ -d /usr/local/opt/python3/bin ]]; then
+  export PATH="/usr/local/opt/python3/bin:$PATH"
+fi
+if [[ -d /usr/local/opt/python2/bin ]]; then
+  export PATH="/usr/local/opt/python2/bin:$PATH"
+fi
 
 # heroku
 export HEROKU_HOME=/usr/local/heroku
