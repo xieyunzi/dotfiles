@@ -1,0 +1,4 @@
+[http]
+proxy = "socks5h://localhost:1080"
+[https]
+proxy = "socks5h://localhost:1080"
