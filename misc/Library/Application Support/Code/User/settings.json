@@ -7,10 +7,12 @@
     },
     "vim.disableAnnoyingNeovimMessage": true,
     "workbench.startupEditor": "newUntitledFile",
-    "editor.fontSize": 15,
+    "editor.fontSize": 13,
     "workbench.colorTheme": "Solarized Dark",
     "javascript.validate.enable": false,
     "go.docsTool": "gogetdoc",
-    "http.proxy": "http://localhost:8123",
-    "window.zoomLevel": 0
+    // "http.proxy": "http://localhost:8123",
+    "window.zoomLevel": 0,
+    "python.linting.pylintEnabled": false,
+    "search.location": "panel",
 }
