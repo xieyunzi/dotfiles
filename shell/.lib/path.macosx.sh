@@ -48,7 +48,6 @@ if [[ -d /usr/local/opt/libpq/bin ]]; then
 fi
 
 # haskell
-export HASKELL_HOME="$HOME/Library/Haskell"
 
 # openssl
 if [[ -e /usr/local/opt/openssl ]]; then
