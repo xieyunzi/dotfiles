@@ -58,7 +58,7 @@ font:
     # style: Italic
 
   # Point size of the font
-  size: 14.0
+  size: 15.5
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -158,7 +158,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 1.0
+background_opacity: 0.7
 
 # Mouse bindings
 #
@@ -366,4 +366,11 @@ key_bindings:
 
   - { key: LBracket, mods: Alt,     chars: "\x1b["                       } # Alt + [
   - { key: RBracket, mods: Alt,     chars: "\x1b]"                       } # Alt + ]
+  - { key: H,        mods: Alt,     chars: "\x1bH"                       }
+  - { key: L,        mods: Alt,     chars: "\x1bL"                       }
+  - { key: J,        mods: Alt,     chars: "\x1bJ"                       }
+  - { key: K,        mods: Alt,     chars: "\x1bK"                       }
+  - { key: B,        mods: Alt,     chars: "\x1bB"                       }
+  - { key: F,        mods: Alt,     chars: "\x1bF"                       }
+
   - { key: N,        mods: Command, command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] }}

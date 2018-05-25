@@ -65,7 +65,9 @@ fi
 if [[ -n $HASKELL_HOME ]]; then export PATH="$HASKELL_HOME/bin:$PATH"; fi
 
 # js javascript yarn
-if [[ -d $HOME/.config/yarn ]]; then export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"; fi
+if [[ -d $HOME/.config/yarn ]]; then
+  export PATH=PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+fi
 
 # rust lang
 if [[ -d $HOME/.cargo ]]; then
