@@ -73,6 +73,10 @@ font:
     x: 0
     y: 0
 
+  # Scale the font size based on the monitor's DPI. This will lead to bigger text on HiDPI
+  # screens and make reading text a little easier.
+  scale_with_dpi: true
+
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
@@ -372,5 +376,8 @@ key_bindings:
   - { key: K,        mods: Alt,     chars: "\x1bk"                       }
   - { key: B,        mods: Alt,     chars: "\x1bb"                       }
   - { key: F,        mods: Alt,     chars: "\x1bf"                       }
+
+  # https://github.com/jwilm/alacritty/issues/1359
+  - { key: Q,        mods: Control, chars: "\x11"                        }
 
   - { key: N,        mods: Command, command: { program: "open", args: ["-n", "/Applications/Alacritty.app"] }}
