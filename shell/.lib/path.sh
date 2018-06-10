@@ -24,11 +24,11 @@ fi
 
 # pythen, pyenv
 # https://github.com/yyuu/pyenv
-if [[ -d $HOME/.pyenv ]]; then
-  export PATH="$HOME/.pyenv/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
+# if [[ -d $HOME/.pyenv ]]; then
+#   export PATH="$HOME/.pyenv/bin:$PATH"
+#   eval "$(pyenv init -)"
+#   eval "$(pyenv virtualenv-init -)"
+# fi
 
 # http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
 
@@ -41,7 +41,7 @@ fi
 
 # heroku
 # var: HEROKU_HOME
-if [[ -n $HEROKU_HOME ]]; then export PATH="$HEROKU_HOME/bin:$PATH"; fi
+# if [[ -n $HEROKU_HOME ]]; then export PATH="$HEROKU_HOME/bin:$PATH"; fi
 
 # java
 if [[ -d $HOME/.sdkman ]]; then

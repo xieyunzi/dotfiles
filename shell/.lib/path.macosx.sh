@@ -12,9 +12,9 @@ fi
 
 # nvm, lasy load nvm, because it's slow
 # https://github.com/creationix/nvm/issues/539
-export NVM_DIR="$HOME/.nvm"
-NVM_SOURCE=/usr/local/opt/nvm/nvm.sh
-lazy_source nvm $NVM_SOURCE
+# export NVM_DIR="$HOME/.nvm"
+# NVM_SOURCE=/usr/local/opt/nvm/nvm.sh
+# lazy_source nvm $NVM_SOURCE
 
 # golang
 if [[ -d /usr/local/opt/go/libexec ]]; then
@@ -30,7 +30,7 @@ if [[ -d /usr/local/opt/python2/bin ]]; then
 fi
 
 # heroku
-export HEROKU_HOME=/usr/local/heroku
+# export HEROKU_HOME=/usr/local/heroku
 
 # java
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -46,8 +46,6 @@ fi
 if [[ -d /usr/local/opt/libpq/bin ]]; then
   export PATH="/usr/local/opt/libpq/bin:$PATH"
 fi
-
-# haskell
 
 # openssl
 if [[ -e /usr/local/opt/openssl ]]; then
