@@ -1,0 +1,16 @@
+#!/bin/bash
+# Usage:
+#   echo '(print (slurp "./test.clj"))' > test.clj
+#   clj test.clj
+
+# https://stackoverflow.com/questions/19107683/speed-up-clojure-startup-time-with-nailgun
+# https://github.com/facebook/nailgun
+
+CLOJURE_PATH="$HOME/.m2/repository/org/clojure/clojure/1.8.0"
+CLOJURE_JAR="clojure-1.8.0.jar"
+
+if [[ -d $CLOJURE_PATH ]]; then
+  java -jar "$CLOJURE_PATH/$CLOJURE_JAR" "$@"
+else
+  echo "clojure not exist: $CLOJURE_PATH"
+fi
