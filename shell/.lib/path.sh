@@ -73,7 +73,7 @@ fi
 if [[ -d $HOME/.cargo ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
   export RUSTC="$HOME/.cargo/bin/rustc"
-  export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+  # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
 # common
