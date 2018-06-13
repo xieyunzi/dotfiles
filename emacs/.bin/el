@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Usage:
+#   echo '(prin1 (version))' > version.el
+#   el version.el
+
+emacs -q --script "$@"
