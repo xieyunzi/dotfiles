@@ -196,13 +196,6 @@
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this))
 
-(use-package git-gutter
-  :ensure t
-  :config
-  (global-git-gutter-mode +1)
-  (custom-set-variables
-   '(git-gutter:update-interval 5)))
-
 (use-package rainbow-delimiters
   :ensure t
   :config
