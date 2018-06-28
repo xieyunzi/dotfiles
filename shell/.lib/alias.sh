@@ -144,6 +144,12 @@ else
   alias del=move_to_trash
 fi
 
+# https://stackoverflow.com/questions/9680420/looking-for-a-cmake-clean-command-to-clear-up-cmake-output
+# Find and then delete all files under current directory (.) that:
+#  1. contains cmake (case-&insensitive) in it's path (wholename)
+#  2. name is not CMakeLists.txt
+alias cmake_clean="find . -iwholename '*cmake*' -not -name CMakeLists.txt -delete"
+
 # command line twitter client
 # https://github.com/mattn/twty
 alias tt='HTTP_PROXY=localhost:8123 twty'
