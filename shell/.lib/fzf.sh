@@ -1,7 +1,7 @@
 # https://github.com/junegunn/fzf
 # https://github.com/junegunn/dotfiles/blob/master/bashrc
 
-export FZF_DEFAULT_COMMAND='rg --hidden --files'
+export FZF_DEFAULT_COMMAND="rg --hidden -g '!.git/' --files"
 export FZF_DEFAULT_OPTS="--reverse --inline-info"
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -12,7 +12,7 @@ export FZF_TMUX_HEIGHT=20
 
 frg(){
   local line
-  line=`rg --line-number --hidden "$1" | fzf`
+  line=`rg --line-number --hidden -g '!.git/' "$1" | fzf`
   [ -n "$line" ] && $EDITOR $(cut -d':' -f1 <<< "$line") +$(cut -d':' -f2 <<< "$line")
 }
 
