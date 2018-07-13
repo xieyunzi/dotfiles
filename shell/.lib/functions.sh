@@ -2,7 +2,7 @@ if [[ ! $DOT_SHELL_LIB_FUNCTIONS -eq 1 ]]; then
 DOT_SHELL_LIB_FUNCTIONS=1
 
 uuid-remove-dashes() {
-  echo ${$(uuid)//-/}
+  echo ${$(uuidgen)//-/}
 }
 
 find-delete-with-extension() {
@@ -18,6 +18,10 @@ du-sort() {
     echo "Please install coreutils to use sort."
     du -h -d 1 $1
   fi
+}
+
+println_path() {
+  echo $PATH | tr ':' '\n' | sort | uniq
 }
 
 # http://alias.sh/paginated-colored-tree

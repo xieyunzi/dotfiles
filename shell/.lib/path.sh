@@ -45,7 +45,6 @@ fi
 
 # java
 if [[ -d $HOME/.sdkman ]]; then
-  export SDKMAN_DIR="$HOME/.sdkman"
   source $HOME/.sdkman/bin/sdkman-init.sh
 fi
 if [[ -n $JAVA_HOME ]]; then
@@ -66,7 +65,7 @@ if [[ -n $HASKELL_HOME ]]; then export PATH="$HASKELL_HOME/bin:$PATH"; fi
 
 # js javascript yarn
 if [[ -d $HOME/.config/yarn ]]; then
-  export PATH=PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+  export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 fi
 
 # rust lang
@@ -74,6 +73,15 @@ if [[ -d $HOME/.cargo ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
   export RUSTC="$HOME/.cargo/bin/rustc"
   # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fi
+
+[[ -x `which fzf` ]] >/dev/null 2>&1 && \
+  source "$HOME/.lib/fzf.sh"
+
+# https://github.com/asdf-vm/asdf
+if [[ -e "$HOME/.asdf/asdf.sh" ]]; then
+  source "$HOME/.asdf/asdf.sh"
+  # source "$HOME/.asdf/completions/asdf.bash"
 fi
 
 # common
