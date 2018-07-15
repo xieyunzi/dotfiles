@@ -21,7 +21,7 @@ du-sort() {
 }
 
 println_path() {
-  echo $PATH | tr ':' '\n' | sort | uniq
+  echo $PATH | tr ':' '\n' | sort -u
 }
 
 # http://alias.sh/paginated-colored-tree
