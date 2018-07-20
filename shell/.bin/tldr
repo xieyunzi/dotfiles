@@ -178,6 +178,12 @@ get_tldr() {
     }
     # if the curl failed for some reason, keep cat from whinging
     cat "$cached" 2>/dev/null
+
+    local localfile="$configdir/xz-local/$1.md"
+    if [[ -e "$localfile" ]]; then
+      printf "\n"
+      cat "$localfile"
+    fi
 }
 
 
