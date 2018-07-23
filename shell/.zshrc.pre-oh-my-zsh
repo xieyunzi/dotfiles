@@ -56,7 +56,7 @@ ZSH_THEME="xieyunzi"
 
 # https://cirw.in/blog/bracketed-paste
 # https://github.com/robbyrussell/oh-my-zsh/pull/1698
-plugins=(colored-man-pages docker z)
+plugins=(colored-man-pages docker z chrome-cli)
 
 # User configuration
 

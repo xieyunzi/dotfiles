@@ -61,7 +61,7 @@ fi
 alias vi2="v -O2 "
 # }}}
 # for emacs {{{
-alias e=emacs
+alias e="emacs -q"
 alias emacsd="emacs --daemon"
 alias ec="emacsclient -c"
 alias emacsdkill="emacsclient -e '(kill-emacs)'"
@@ -150,13 +150,13 @@ fi
 #  2. name is not CMakeLists.txt
 alias cmake_clean="find . -iwholename '*cmake*' -not -name CMakeLists.txt -delete"
 
+# https://github.com/prasmussen/chrome-cli
+if [[ $IS_MAC -eq 1 ]]; then
+  alias c=chrome-cli
+fi
+
 # command line twitter client
 # https://github.com/mattn/twty
 alias tt='HTTP_PROXY=localhost:8123 twty'
-
-if [[ $IS_MAC -eq 1 ]]; then
-  # highlight today for macos cal
-  alias cal='cal | grep -w -A4 -B6 $(date +%d)'
-fi
 
 fi

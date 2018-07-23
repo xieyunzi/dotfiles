@@ -217,7 +217,7 @@ ftpane() {
 # bind-key 0 run "tmux split-window -l 12 'bash -ci ftpane'"
 
 # c - browse chrome history
-c() {
+c_history() {
   local cols sep
   export cols=$(( COLUMNS / 3 ))
   export sep='{::}'
