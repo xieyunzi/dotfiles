@@ -46,6 +46,10 @@ emacs/.emacs.d/projectile.cache
 tmux/.tmux/plugins/
 tmux/.tmux/resurrect
 
+# gdb
+
+gdb/.gdbinit.d/auto
+
 # tmp
 zx-tmp/*
 
