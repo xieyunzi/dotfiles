@@ -27,7 +27,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (diff-hl evil-mc rainbow-delimiters es-mode python-mode rc-mode markdown-mode evil-mu4e mu4e-alert graphql-mode magit evil-cleverparens which-key async inf-ruby clojure-mode multiple-cursors go-mode smex web-mode expand-region clj-refactor robe yaml-mode company find-file-in-project ag helm-projectile projectile helm-ag evil-leader helm neotree evil evil-tutor cider slime))))
+    (evil-mc rainbow-delimiters es-mode python-mode rc-mode markdown-mode evil-mu4e mu4e-alert graphql-mode magit evil-cleverparens which-key async inf-ruby clojure-mode multiple-cursors go-mode smex web-mode expand-region clj-refactor robe yaml-mode company find-file-in-project ag helm-projectile projectile helm-ag evil-leader helm neotree evil evil-tutor cider slime))))
 ;; smartparens
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
