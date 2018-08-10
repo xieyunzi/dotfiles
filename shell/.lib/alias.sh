@@ -155,6 +155,8 @@ if [[ $IS_MAC -eq 1 ]]; then
   alias c=chrome-cli
 fi
 
+alias j=z
+
 # command line twitter client
 # https://github.com/mattn/twty
 alias tt='HTTP_PROXY=localhost:8123 twty'
