@@ -24,3 +24,6 @@ nohup.out
 # clojure
 .lein-repl-history
 .nrepl-port
+
+#gdb
+.gdb_history
