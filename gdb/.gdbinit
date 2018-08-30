@@ -1418,7 +1418,7 @@ class Registers(Dashboard.Module):
         # format registers info
         partial = []
         for name, value, changed in registers:
-            styled_name = ansi(name.rjust(max_name), R.style_low)
+            styled_name = ansi(name.rjust(max_name), R.style_high)
             value_style = R.style_selected_1 if changed else ''
             styled_value = ansi(value.ljust(max_value), value_style)
             partial.append(styled_name + ' ' + styled_value)
