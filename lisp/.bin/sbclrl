@@ -10,4 +10,4 @@ rlwrap \
   -c \
   -b ${BREAK_CHARS} \
   -f ${HOME}/.sbcl_completions \
-  /usr/local/bin/sbcl $@
+  $(which sbcl) $@
