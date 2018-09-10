@@ -11,13 +11,13 @@
   packedGitWindowSize = 512m
   quotepath = off
 [pack]
-  deltaCacheSize = 2047m
-  packSizeLimit = 2047m
-  windowMemory = 2047m
+  deltaCacheSize = 512m
+  packSizeLimit = 512m
+  windowMemory = 512m
 [http]
-  postBuffer = 2047m
+  postBuffer = 512m
 [https]
-	postBuffer = 2047m
+	postBuffer = 512m
 [alias]
   d    = diff
   cl   = clone
