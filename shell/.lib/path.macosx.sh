@@ -33,7 +33,8 @@ fi
 # export HEROKU_HOME=/usr/local/heroku
 
 # java
-export JAVA_HOME="$(/usr/libexec/java_home)"
+# use sdkman install java
+# export JAVA_HOME="$(/usr/libexec/java_home)"
 
 # android sdk
 if [[ -e /usr/local/opt/android-sdk ]]; then
