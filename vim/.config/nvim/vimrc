@@ -117,11 +117,11 @@ endif
 if v:version >= 703
   " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
   Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-  Plug 'guns/vim-clojure-static'
-  Plug 'guns/vim-clojure-highlight'
-  Plug 'venantius/vim-cljfmt'
+  Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+  Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+  Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 endif
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'groenewege/vim-less'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -1585,6 +1585,11 @@ nnoremap U :UndotreeToggle<CR>
 " ----------------------------------------------------------------------------
 
 let g:clojure_maxlines = 60
+
+set lispwords+=match
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
+" :h isk https://vi.stackexchange.com/questions/13812/a-version-of-w-which-skips-to-the-next-underscore
+au FileType clojure setlocal iskeyword-=/
 
 " let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:paredit_smartjump = 1
