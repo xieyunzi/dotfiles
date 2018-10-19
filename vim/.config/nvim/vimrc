@@ -42,6 +42,8 @@ Plug 'svermeulen/vim-easyclip'
 if s:darwin
   Plug 'junegunn/vim-xmark'
 endif
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
 
 " Colors
 " Plug 'tomasr/molokai'
