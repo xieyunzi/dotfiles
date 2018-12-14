@@ -1,4 +1,9 @@
-[http]
-proxy = "socks5h://localhost:1080"
-[https]
-proxy = "socks5h://localhost:1080"
+# [http]
+# proxy = "socks5h://localhost:1080"
+# [https]
+# proxy = "socks5h://localhost:1080"
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = 'ustc'
+[source.ustc]
+registry = "https://mirrors.ustc.edu.cn/crates.io-index"
