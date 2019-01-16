@@ -45,6 +45,13 @@ endif
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
 
+" https://github.com/Shougo/deoplete.nvim
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+  Plug 'Shougo/deol.nvim'
+endif
+
 " Colors
 " Plug 'tomasr/molokai'
 Plug 'chriskempson/vim-tomorrow-theme'
