@@ -8,6 +8,7 @@
 # https://github.com/yujitach/MenuMeters
 # https://github.com/karan/joe
 # https://github.com/banbanchs/pan-baidu-download
+# http://guichaz.free.fr/polysh/
 #
 ###
 
@@ -20,6 +21,7 @@ brew "ant"
 brew "aria2"
 brew "clasp"
 brew "gringo"
+brew "gron"
 brew "aspcud"
 brew "autoconf"
 brew "automake"
@@ -95,6 +97,7 @@ brew "ilmbase"
 brew "jpeg"
 brew "oniguruma"
 brew "jq"
+brew "jid"
 brew "libevent"
 brew "libssh2"
 brew "libgit2"
