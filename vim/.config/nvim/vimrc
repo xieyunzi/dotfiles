@@ -176,6 +176,7 @@ set nu
 set autoindent
 set smartindent
 set lazyredraw
+set nonumber
 set laststatus=2
 set showcmd
 set visualbell
