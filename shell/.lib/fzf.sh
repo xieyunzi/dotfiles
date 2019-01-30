@@ -1,7 +1,7 @@
 # https://github.com/junegunn/fzf
 # https://github.com/junegunn/dotfiles/blob/master/bashrc
 
-export FZF_DEFAULT_COMMAND="rg --hidden -g '!.git/' --files"
+export FZF_DEFAULT_COMMAND="rg --hidden -g '!.git/' --files --no-ignore-messages"
 export FZF_DEFAULT_OPTS="--reverse --inline-info"
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -20,7 +20,7 @@ alias fag=frg
 
 ff() {
   local file
-  file=`rg --files | fzf`
+  file=`rg --files --no-ignore-messages | fzf`
   [ -n "$file" ] && ${EDITOR:-vim} "$file"
 }
 
