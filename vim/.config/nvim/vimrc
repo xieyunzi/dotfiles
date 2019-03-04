@@ -44,6 +44,7 @@ if s:darwin
 endif
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
+Plug 'vim-scripts/rfc-syntax'
 
 " https://github.com/Shougo/deoplete.nvim
 if has('nvim')
