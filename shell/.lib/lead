@@ -8,7 +8,10 @@ DOT_SHELL_LIB_LEAD=1
 # echo $(pwd -P)
 
 export CLICOLOR=1
+# bsd
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+# linux
+export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
 # history
 # http://stackoverflow.com/questions/19454837/bash-histsize-vs-histfilesize
@@ -19,8 +22,8 @@ export SAVEHIST=${HISTFILESIZE}
 
 source $HOME/.lib/checks.sh
 
-# colored man pages
 if [[ $IS_LINUX -eq 1 ]]; then
+  # colored man pages
   export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
   export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode - bold, magenta
   export LESS_TERMCAP_me=$(printf '\e[0m') # turn off all appearance modes (mb, md, so, us)
