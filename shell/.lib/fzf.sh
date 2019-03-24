@@ -15,8 +15,17 @@ frg(){
   line=`rg --line-number --hidden -g '!.git/' "$1" | fzf`
   [ -n "$line" ] && $EDITOR $(cut -d':' -f1 <<< "$line") +$(cut -d':' -f2 <<< "$line")
 }
-
 alias fag=frg
+
+mf(){
+  local line
+  line=`mdfind -name "$1" | fzf`
+  echo $line
+}
+
+mfo(){
+  open -a "$(mf \"$1\")"
+}
 
 ff() {
   local file
