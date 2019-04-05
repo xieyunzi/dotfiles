@@ -15,6 +15,9 @@ tags-ja
 # ruby
 .byebug_history
 
+# python
+.ropeproject/
+
 nohup.out
 .vscode
 
