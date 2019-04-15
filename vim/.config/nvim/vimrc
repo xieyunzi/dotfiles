@@ -135,7 +135,6 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'groenewege/vim-less'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'rust-lang/rust.vim'
@@ -143,10 +142,9 @@ Plug 'tpope/vim-rails', { 'for': [] }
 Plug 'derekwyatt/vim-scala', { 'for': ['scala', 'sbt.scala']}
 Plug 'honza/dockerfile.vim'
 Plug 'solarnz/thrift.vim'
-Plug 'dag/vim-fish'
 Plug 'chrisbra/unicode.vim', { 'for': 'journal' }
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-Plug 'jimenezrick/vimerl',   { 'for': 'erlang' }
+Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
 Plug 'wlangstroth/vim-haskell', { 'for': 'haskell' }
 Plug 'elzr/vim-json',           { 'for': 'json' }
 Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' }
