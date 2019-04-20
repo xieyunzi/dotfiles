@@ -84,6 +84,16 @@ if [[ -e "$HOME/.asdf/asdf.sh" ]]; then
   # source "$HOME/.asdf/completions/asdf.bash"
 fi
 
+# https://github.com/skywind3000/z.lua
+z-lua() {
+  local shell_name
+  local _ZL_CMD
+  shell_name=$(echo $SHELL | rev | cut -d '/' -f 1 | rev)
+  _ZL_CMD=_z
+  eval "$(lua ~/.bin/z.lua  --init $shell_name)"
+}
+z-lua
+
 # common
 export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 
