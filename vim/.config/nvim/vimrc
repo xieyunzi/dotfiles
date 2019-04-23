@@ -23,14 +23,13 @@ silent! if plug#begin('~/.vim/plugged')
 
 " My plugins
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-github-dashboard'
-Plug 'junegunn/vim-emoji'
+" Plug 'junegunn/vim-emoji'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-slash'
 Plug 'junegunn/vim-fnr'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-journal'
-Plug 'junegunn/seoul256.vim'
+" Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -55,7 +54,7 @@ endif
 
 " Colors
 " Plug 'tomasr/molokai'
-Plug 'chriskempson/vim-tomorrow-theme'
+" Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'altercation/vim-colors-solarized'
 
 " Edit
@@ -218,6 +217,9 @@ if has('patch-7.4.338')
   set breakindentopt=sbr
 endif
 
+" syntax enable
+set background=dark
+colorscheme solarized
 
 " %< Where to truncate
 " %n buffer number
@@ -1514,6 +1516,11 @@ let g:indentLine_color_gui = '#616161'
 " ----------------------------------------------------------------------------
 let g:signify_vcs_list = ['git']
 let g:signify_skip_filetype = { 'journal': 1 }
+
+highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
+highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
+highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+highlight clear SignColumn
 
 " ----------------------------------------------------------------------------
 " vim-slash
