@@ -125,29 +125,29 @@ endif
 " Lang
 if v:version >= 703
   " Plug 'kovisoft/paredit',    { 'for': 'clojure' }
-  Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+  Plug 'tpope/vim-fireplace',   { 'for': 'clojure' }
   Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
   Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-  Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+  Plug 'venantius/vim-cljfmt',  { 'for': 'clojure' }
 endif
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go',            { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'groenewege/vim-less'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx',             { 'for': ['javascript', 'jsx'] }
 Plug 'slim-template/vim-slim'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-rails', { 'for': [] }
-Plug 'derekwyatt/vim-scala', { 'for': ['scala', 'sbt.scala']}
-Plug 'honza/dockerfile.vim'
+Plug 'rust-lang/rust.vim',      { 'for': 'rust' }
+Plug 'tpope/vim-rails',         { 'for': 'ruby' }
+Plug 'derekwyatt/vim-scala',    { 'for': ['scala', 'sbt.scala']}
+Plug 'honza/dockerfile.vim',    { 'for': 'dockerfile' }
 Plug 'solarnz/thrift.vim'
-Plug 'chrisbra/unicode.vim', { 'for': 'journal' }
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'chrisbra/unicode.vim',    { 'for': 'journal' }
+Plug 'elixir-lang/vim-elixir',  { 'for': 'elixir' }
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'erlang' }
 Plug 'wlangstroth/vim-haskell', { 'for': 'haskell' }
 Plug 'elzr/vim-json',           { 'for': 'json' }
 Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' }
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby',       { 'for': 'ruby' }
 
 " Lint
 Plug 'w0rp/ale'
