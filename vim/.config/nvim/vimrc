@@ -128,7 +128,7 @@ if v:version >= 703
   Plug 'tpope/vim-fireplace',   { 'for': 'clojure' }
   Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
   Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-  Plug 'venantius/vim-cljfmt',  { 'for': 'clojure' }
+  " Plug 'venantius/vim-cljfmt',  { 'for': 'clojure' }
 endif
 Plug 'fatih/vim-go',            { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'groenewege/vim-less'
