@@ -36,7 +36,15 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/vader.vim'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 Plug 'junegunn/rainbow_parentheses.vim'
+" Activation based on file type
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
 Plug 'svermeulen/vim-easyclip'
 if s:darwin
   Plug 'junegunn/vim-xmark'
@@ -129,6 +137,9 @@ if v:version >= 703
   Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
   Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
   " Plug 'venantius/vim-cljfmt',  { 'for': 'clojure' }
+  " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+  " Plug 'tpope/vim-salve', { 'for': 'clojure' }
+  " let g:salve_auto_start_repl = 1
 endif
 Plug 'fatih/vim-go',            { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'groenewege/vim-less'
@@ -1635,7 +1646,6 @@ let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
 " :h isk https://vi.stackexchange.com/questions/13812/a-version-of-w-which-skips-to-the-next-underscore
 au FileType clojure setlocal iskeyword-=/
 
-" let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:paredit_smartjump = 1
 
 " ----------------------------------------------------------------------------
