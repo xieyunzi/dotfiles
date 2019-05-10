@@ -85,3 +85,8 @@ nnoremap <silent> <M->> <C-W>><C-W>><c-w>><c-w>><c-w>>
 
 " http://www.jovicailic.org/2015/05/saving-read-only-files-in-vim-sudo-trick
 cmap w!! w !sudo tee % >/dev/null
+
+" https://superuser.com/questions/102343/can-i-add-a-set-of-words-to-the-vim-autocomplete-vocabulary
+" :h dictionary
+set dictionary+=~/.lib/google-10000-english.txt
+inoremap <silent> <C-f> <C-x><C-k>
