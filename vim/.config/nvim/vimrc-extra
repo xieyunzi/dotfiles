@@ -87,6 +87,7 @@ nnoremap <silent> <M->> <C-W>><C-W>><c-w>><c-w>><c-w>>
 cmap w!! w !sudo tee % >/dev/null
 
 " https://superuser.com/questions/102343/can-i-add-a-set-of-words-to-the-vim-autocomplete-vocabulary
+" https://github.com/first20hours/google-10000-english
 " :h dictionary
 set dictionary+=~/.lib/google-10000-english.txt
 inoremap <silent> <C-f> <C-x><C-k>
