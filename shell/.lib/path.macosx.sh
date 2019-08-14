@@ -48,14 +48,14 @@ if [[ -d /usr/local/opt/libpq/bin ]]; then
   export PATH="/usr/local/opt/libpq/bin:$PATH"
 fi
 
-# openssl
-if [[ -e /usr/local/opt/openssl ]]; then
-  export PATH="/usr/local/opt/openssl/bin:$PATH"
-fi
-# libressl
-if [[ -e /usr/local/opt/libressl ]]; then
-  export PATH="/usr/local/opt/libressl/bin:$PATH"
-fi
+# # openssl
+# if [[ -e /usr/local/opt/openssl ]]; then
+#   export PATH="/usr/local/opt/openssl/bin:$PATH"
+# fi
+# # libressl
+# if [[ -e /usr/local/opt/libressl ]]; then
+#   export PATH="/usr/local/opt/libressl/bin:$PATH"
+# fi
 # make
 if [[ -e /usr/local/opt/make/libexec/gnubin ]]; then
   export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"

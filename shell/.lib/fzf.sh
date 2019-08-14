@@ -1,3 +1,6 @@
+if [[ ! $DOT_SHELL_LIB_FZF -eq 1 ]]; then
+DOT_SHELL_LIB_FZF=1
+
 # https://github.com/junegunn/fzf
 # https://github.com/junegunn/dotfiles/blob/master/bashrc
 
@@ -303,3 +306,5 @@ gt() {
     fzf-tmux --multi --preview-window right:70% \
              --preview 'git show --color=always {} | head -'$LINES
 }
+
+fi

@@ -56,6 +56,7 @@ export PATH="$HOME/.bin:$PATH"
 
 source $HOME/.lib/path.sh
 source $HOME/.lib/alias.sh
+source $HOME/.lib/tmux.sh
 source $HOME/.lib/functions.sh
 
 # load custom profile
