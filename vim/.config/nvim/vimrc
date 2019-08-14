@@ -160,6 +160,9 @@ Plug 'elzr/vim-json',           { 'for': 'json' }
 Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' }
 Plug 'vim-ruby/vim-ruby',       { 'for': 'ruby' }
 
+" file type
+Plug 'chrisbra/csv.vim'
+
 " Lint
 Plug 'w0rp/ale'
 
