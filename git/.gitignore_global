@@ -30,3 +30,9 @@ nohup.out
 
 #gdb
 .gdb_history
+
+#xz
+/test-data
+/xz-data
+/xz-docs
+/.todo
