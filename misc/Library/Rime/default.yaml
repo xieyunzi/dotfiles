@@ -7,8 +7,8 @@ ascii_composer:
     Eisu_toggle: clear
     Shift_L: inline_ascii
     Shift_R: commit_text
-config_version: 0.36.custom.4045526773
-customization: 4045526773
+config_version: 0.36.custom.451475692
+customization: 451475692
 key_binder:
   bindings:
     - {accept: "Control+p", send: Up, when: composing}
@@ -119,6 +119,7 @@ recognizer:
     uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 schema_list:
+  - schema: double_pinyin_flypy
   - schema: luna_pinyin
   - schema: luna_pinyin_simp
 switcher:

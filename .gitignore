@@ -56,9 +56,11 @@ zx-tmp/*
 # ignore file with example
 misc/.proxychains/proxychains.conf
 misc/.config/rtv/refresh-token
-misc/Library/Rime/*.bin
-misc/Library/Rime/luna_pinyin.userdb/*
 misc/Library/Application Support/Code/*
+# input method https://github.com/rime
+misc/Library/Rime/*.bin
+misc/Library/Rime/*.dict.yaml
+misc/Library/Rime/luna_pinyin.userdb/*
 
 shell/.deliver
 shell/.oh-my-zsh

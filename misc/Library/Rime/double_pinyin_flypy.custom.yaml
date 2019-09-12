@@ -1,3 +1,21 @@
 # double_pinyin_flypy.custom.yaml, 只对小鹤双拼生效
 patch:
   translator/preedit_format: {}     # 输入双拼码的时候不转化为全拼码
+
+  # https://github.com/xiaoTaoist/rime-dict
+  #載入朙月拼音擴充詞庫
+  translator/dictionary: luna_pinyin.extended
+  #標點
+  punctuator/import_preset: mysymbols
+  recognizer/patterns/punct: "^/([a-z]+|[0-9])$"
+  switches:
+    - name: ascii_mode
+      reset: 1 # 默認英文輸出
+      states: [ 西文, 中文 ]
+    - name: full_shape
+      states: [ 半角, 全角 ]
+    - name: zh_simp           # 注意這裏（※1）
+      reset: 1
+      states: [ 漢字, 汉字 ]
+  simplifier:
+    option_name: zh_simp      # 和這裏（※2）
