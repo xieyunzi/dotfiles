@@ -163,6 +163,9 @@ Plug 'vim-ruby/vim-ruby',       { 'for': 'ruby' }
 " file type
 Plug 'chrisbra/csv.vim'
 
+" word count
+Plug 'ChesleyTan/wordCount.vim'
+
 " Lint
 Plug 'w0rp/ale'
 
@@ -249,7 +252,7 @@ colorscheme solarized
 " %V Virtual column
 " %P Percentage
 " %#HighlightGroup#
-set statusline=%<[%n]\ %F\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\ %=%-14.(%l,%c%V%)\ %P
+set statusline=%<[%n]\ %F\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\ %=%-14.(%{wordCount#WordCount()}\ \ %l,%c%V%)\ %P
 silent! if emoji#available()
   let s:ft_emoji = map({
     \ 'c':          'baby_chick',
