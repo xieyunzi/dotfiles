@@ -9,6 +9,10 @@ find-delete-with-extension() {
   find . -name "*.$1" -type f -exec rm -- {} +
 }
 
+du-largest() {
+  du -kx | egrep -v "\./.+/" | sort -n
+}
+
 du-sort() {
   if [[ $IS_LINUX -eq 1 ]]; then
     du -h -d 1 $1 | sort -h
@@ -33,9 +37,8 @@ open_baidu()  { open_chrome "https://www.baidu.com/s?wd=$1";  }
 alias goo=open_google
 alias bai=open_baidu
 
-du-largest() {
-  du -kx | egrep -v "\./.+/" | sort -n
-}
+# count
+alias count-word-cn="rg --count-matches -e '[\u4e00-\u9fa5]'"
 
 # history {{{
 

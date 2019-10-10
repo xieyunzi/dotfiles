@@ -768,7 +768,9 @@ command! Chomp %s/\s\+$// | normal! ``
 " ----------------------------------------------------------------------------
 command! -nargs=1 Count execute printf('%%s/%s//gn', escape(<q-args>, '/')) | normal! ``
 " count Chinese character
-command! CountWordCN execute printf('%%s/[\u4e00-\u9fff]//gn') | normal! ``
+" https://stackoverflow.com/questions/52979801/saving-return-value-of-execute-function-into-variable-vimscript
+" command! CountWordCN2 execute printf('%%s/[\u4e00-\u9fff]//gn') | normal! ``
+command! CountWordCN let c = substitute(system('rg --count-matches -e "[\u4e00-\u9fa5]" '.@%), '\n\+$', '', '') | echo strtrans(c)
 
 " ----------------------------------------------------------------------------
 " :CopyRTF
