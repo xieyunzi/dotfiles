@@ -193,7 +193,7 @@ set laststatus=2
 set showcmd
 set visualbell
 set backspace=indent,eol,start
-set timeoutlen=500
+set timeoutlen=0
 set whichwrap=b,s
 set shortmess=aIT
 set hlsearch " CTRL-L / CTRL-R W
@@ -205,7 +205,7 @@ set wildmode=full
 set tabstop=2
 set shiftwidth=2
 set expandtab smarttab
-set scrolloff=5
+set scrolloff=0
 set encoding=utf-8
 set list
 set listchars=tab:\|\ ,
