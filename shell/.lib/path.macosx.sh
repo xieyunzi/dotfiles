@@ -22,12 +22,13 @@ if [[ -d /usr/local/opt/go/libexec ]]; then
 fi
 
 # python
-if [[ -d /usr/local/opt/python3/bin ]]; then
-  export PATH="/usr/local/opt/python3/bin:$PATH"
-fi
-if [[ -d /usr/local/opt/python2/bin ]]; then
-  export PATH="/usr/local/opt/python2/bin:$PATH"
-fi
+# if [[ -d /usr/local/opt/python3/bin ]]; then
+#   export PATH="/usr/local/opt/python3/bin:$PATH"
+# fi
+# if [[ -d /usr/local/opt/python2/bin ]]; then
+#   export PATH="/usr/local/opt/python2/bin:$PATH"
+# fi
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # heroku
 # export HEROKU_HOME=/usr/local/heroku
@@ -61,6 +62,10 @@ if [[ -e /usr/local/opt/make/libexec/gnubin ]]; then
   export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 fi
 
+# brew mirror for cn
+# https://mirrors.tuna.tsinghua.edu.cn/help/homebrew-bottles/
+# https://mirror.tuna.tsinghua.edu.cn/help/homebrew/
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
 if [[ -e "$HOME/.lib/path.macosx.local" ]]; then . "$HOME/.lib/path.macosx.local"; fi
 
