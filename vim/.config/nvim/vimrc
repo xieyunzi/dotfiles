@@ -193,7 +193,7 @@ set laststatus=2
 set showcmd
 set visualbell
 set backspace=indent,eol,start
-set timeoutlen=0
+set timeoutlen=350
 set whichwrap=b,s
 set shortmess=aIT
 set hlsearch " CTRL-L / CTRL-R W
